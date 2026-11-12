@@ -1,14 +1,16 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "note": "US distributions only. Add or edit entries by hand; the scheduled checker appends new ones.",
   "events": [
     {
       "id": "za-vivillon-pokeball-2026",
       "title": "Poké Ball Pattern Vivillon",
       "game": "legendsza",
-      "keys": ["vivillon-poke-ball"],
+      "keys": [
+        "vivillon-poke-ball"
+      ],
       "how": "Mystery Gift → Get via Internet",
-      "start": null,
+      "start": "2026-11-06",
       "end": "2027-02-26",
       "shiny": false,
       "source": "https://www.dexerto.com/wikis/pokemon-legends-z-a/mystery-gift-codes/"
@@ -17,9 +19,11 @@
       "id": "za-spewpa-2026",
       "title": "Spewpa (evolves into one of 16 Vivillon patterns)",
       "game": "legendsza",
-      "keys": ["spewpa-icy-snow"],
+      "keys": [
+        "spewpa-icy-snow"
+      ],
       "how": "Mystery Gift → Get via Internet",
-      "start": null,
+      "start": "2026-10-29",
       "end": "2026-11-19",
       "shiny": false,
       "source": "https://www.dexerto.com/wikis/pokemon-legends-z-a/mystery-gift-codes/"
@@ -28,7 +32,9 @@
       "id": "za-mewtwo-project-m",
       "title": "Mewtwo (\"Project M\" side quest)",
       "game": "legendsza",
-      "keys": ["mewtwo"],
+      "keys": [
+        "mewtwo"
+      ],
       "how": "Mystery Gift → Get via Internet unlocks the side quest",
       "start": null,
       "end": null,
@@ -39,7 +45,9 @@
       "id": "za-diancie-quest",
       "title": "Diancie (\"Shine Bright Like a Gemstone\" side quest)",
       "game": "legendsza",
-      "keys": ["diancie"],
+      "keys": [
+        "diancie"
+      ],
       "how": "Mystery Gift → Get via Internet unlocks the side quest",
       "start": null,
       "end": null,
@@ -50,12 +58,68 @@
       "id": "sv-goodra-7star-2026",
       "title": "7★ Tera Raid: Goodra (Mightiest Mark)",
       "game": "violet",
-      "keys": ["goodra"],
+      "keys": [
+        "goodra"
+      ],
       "how": "Poké Portal News → 7★ Tera Raid Battle event",
       "start": "2026-11-06",
       "end": "2026-11-12",
       "shiny": false,
       "source": "https://miketendo64.com/2026/11/01/pokemon-sv-events-nov-2026/"
+    },
+    {
+      "id": "home-volcanion-za-dex",
+      "title": "Shiny Volcanion (Legends: Z-A Pokédex completion)",
+      "game": "home",
+      "keys": [
+        "volcanion"
+      ],
+      "how": "Pokémon HOME → complete the Legends: Z-A Pokédex in HOME, then claim in Mystery Gift",
+      "start": "2026-04-27",
+      "end": null,
+      "shiny": true,
+      "source": "https://www.serebii.net/events/2026.shtml"
+    },
+    {
+      "id": "home-za-deposit-starters",
+      "title": "Chikorita, Tepig & Totodile (Legends: Z-A deposit gift)",
+      "game": "home",
+      "keys": [
+        "chikorita",
+        "tepig",
+        "totodile"
+      ],
+      "how": "Pokémon HOME → deposit a Pokémon from Legends: Z-A, then claim in Mystery Gift",
+      "start": "2026-04-02",
+      "end": null,
+      "shiny": false,
+      "source": "https://www.serebii.net/events/2026.shtml"
+    },
+    {
+      "id": "home-celebi-frlg-dex",
+      "title": "Celebi (FireRed & LeafGreen Pokédex completion)",
+      "game": "home",
+      "keys": [
+        "celebi"
+      ],
+      "how": "Pokémon HOME → complete the FireRed/LeafGreen Pokédex in HOME, then claim in Mystery Gift",
+      "start": null,
+      "end": null,
+      "shiny": false,
+      "source": "https://www.serebii.net/events/2026.shtml"
+    },
+    {
+      "id": "home-meloetta-shiny",
+      "title": "Shiny Meloetta (Scarlet/Violet Pokédex completion)",
+      "game": "home",
+      "keys": [
+        "meloetta-aria"
+      ],
+      "how": "Pokémon HOME (mobile) → complete the Paldea Pokédex, then claim in Mystery Gift",
+      "start": null,
+      "end": null,
+      "shiny": true,
+      "source": "https://www.pokemon.com/us/pokemon-video-games/pokemon-distributions"
     }
   ]
 }
