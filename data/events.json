@@ -1,0 +1,61 @@
+{
+  "updated": "2026-11-11",
+  "note": "US distributions only. Add or edit entries by hand; the scheduled checker appends new ones.",
+  "events": [
+    {
+      "id": "za-vivillon-pokeball-2026",
+      "title": "Poké Ball Pattern Vivillon",
+      "game": "legendsza",
+      "keys": ["vivillon-poke-ball"],
+      "how": "Mystery Gift → Get via Internet",
+      "start": null,
+      "end": "2027-02-26",
+      "shiny": false,
+      "source": "https://www.dexerto.com/wikis/pokemon-legends-z-a/mystery-gift-codes/"
+    },
+    {
+      "id": "za-spewpa-2026",
+      "title": "Spewpa (evolves into one of 16 Vivillon patterns)",
+      "game": "legendsza",
+      "keys": ["spewpa-icy-snow"],
+      "how": "Mystery Gift → Get via Internet",
+      "start": null,
+      "end": "2026-11-19",
+      "shiny": false,
+      "source": "https://www.dexerto.com/wikis/pokemon-legends-z-a/mystery-gift-codes/"
+    },
+    {
+      "id": "za-mewtwo-project-m",
+      "title": "Mewtwo (\"Project M\" side quest)",
+      "game": "legendsza",
+      "keys": ["mewtwo"],
+      "how": "Mystery Gift → Get via Internet unlocks the side quest",
+      "start": null,
+      "end": null,
+      "shiny": false,
+      "source": "https://www.dexerto.com/wikis/pokemon-legends-z-a/mystery-gift-codes/"
+    },
+    {
+      "id": "za-diancie-quest",
+      "title": "Diancie (\"Shine Bright Like a Gemstone\" side quest)",
+      "game": "legendsza",
+      "keys": ["diancie"],
+      "how": "Mystery Gift → Get via Internet unlocks the side quest",
+      "start": null,
+      "end": null,
+      "shiny": false,
+      "source": "https://www.dexerto.com/wikis/pokemon-legends-z-a/mystery-gift-codes/"
+    },
+    {
+      "id": "sv-goodra-7star-2026",
+      "title": "7★ Tera Raid: Goodra (Mightiest Mark)",
+      "game": "violet",
+      "keys": ["goodra"],
+      "how": "Poké Portal News → 7★ Tera Raid Battle event",
+      "start": "2026-11-06",
+      "end": "2026-11-12",
+      "shiny": false,
+      "source": "https://miketendo64.com/2026/11/01/pokemon-sv-events-nov-2026/"
+    }
+  ]
+}

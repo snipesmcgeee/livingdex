@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Living Dex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Living Dex</div>
+  <nav class="tabs" id="tabs">
+    <button data-view="living" class="active">Living</button>
+    <button data-view="shiny">Shiny</button>
+    <button data-view="official">Official</button>
+    <button data-view="boxes">Home Boxes</button>
+    <button data-view="routes">Routes</button>
+    <button data-view="events">Events</button>
+    <button data-view="dashboard">Dashboard</button>
+    <button data-view="settings">Settings</button>
+  </nav>
+  <div class="account" id="account"></div>
+</header>
+<div id="banner" class="banner hidden"></div>
+
+<section id="listView" class="view">
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search name, type, ability…">
+    <select id="sort"></select>
+    <button id="sortDir" class="ghost" title="Flip sort direction">↑</button>
+    <button id="filterToggle" class="ghost">Filters <span id="filterCount"></span></button>
+  </div>
+  <div id="filters" class="filters hidden"></div>
+  <div id="resultCount" class="muted small"></div>
+  <div id="grid" class="grid"></div>
+</section>
+
+<section id="boxesView" class="view hidden">
+  <div class="toolbar">
+    <select id="boxDex">
+      <option value="living">Living dex</option>
+      <option value="shiny">Shiny dex</option>
+    </select>
+    <button id="boxPrev" class="ghost">‹</button>
+    <select id="boxPick"></select>
+    <button id="boxNext" class="ghost">›</button>
+  </div>
+  <div class="toolbar box-tools">
+    <div class="seg" id="boxMode">
+      <button data-mode="mark" class="on">Tap to mark caught</button>
+      <button data-mode="info">Tap for details</button>
+    </div>
+    <label class="small muted">Stored in <select id="boxLoc"></select></label>
+    <button id="boxAll" class="ghost">Mark whole box</button>
+    <button id="boxNone" class="ghost">Clear box</button>
+  </div>
+  <div id="boxSummary" class="small muted"></div>
+  <div id="boxGrid" class="box-grid"></div>
+  <p class="muted small" id="boxNote"></p>
+</section>
+
+<section id="eventsView" class="view hidden"></section>
+<section id="routesView" class="view hidden"></section>
+<section id="dashboardView" class="view hidden"></section>
+<section id="settingsView" class="view hidden"></section>
+
+<aside id="detail" class="detail hidden" aria-live="polite"></aside>
+<div id="toast" class="toast hidden"></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
