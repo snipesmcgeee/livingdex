@@ -1,0 +1,777 @@
+{
+ "skip": [
+  "In-game trade",
+  "Roaming Kanto",
+  "Roaming Johto",
+  "Roaming Hoenn",
+  "Roaming Sinnoh",
+  "Kanto Pokecenter",
+  "Johto Pokemart",
+  "Hoenn Pokecenter",
+  "Wandert durch Johto",
+  "Unknown",
+  "﻿——————",
+  "Sinjoh Ruins",
+  "Sinjoy Ruins",
+  "Sinnoh Pokemart",
+  "Riley",
+  "Traveling Man"
+ ],
+ "aliases": {
+  "rby": {
+   "Kanto Underground Path": "UNDERGROUND_PATH",
+   "Underground Path": "UNDERGROUND_PATH",
+   "Cinnabar Lab": "CINNABAR_ISLAND",
+   "Celadon City Prize Corner": "CELADON_CITY"
+  },
+  "gsc": {
+   "Bell Tower": "TIN_TOWER",
+   "Mt. Silver": "SILVER_CAVE",
+   "Mount Silver": "SILVER_CAVE",
+   "Team Rocket HQ": "MAHOGANY_TOWN"
+  },
+  "rse": {
+   "Team Aqua Hideout": "MAPSEC_AQUA_HIDEOUT",
+   "Team Magma Hideout": "MAPSEC_MAGMA_HIDEOUT"
+  },
+  "frlg": {
+   "Cinnabar Lab": "MAPSEC_CINNABAR_ISLAND",
+   "Viapos Chamber": "MAPSEC_VIAPOS_CHAMBER"
+  }
+ },
+ "extras": {
+  "heartgold": {
+   "edges": [
+    [
+     "CIANWOOD_CITY",
+     "ROUTE_47"
+    ],
+    [
+     "ROUTE_47",
+     "ROUTE_48"
+    ],
+    [
+     "ROUTE_47",
+     "CLIFF_CAVE"
+    ],
+    [
+     "ROUTE_48",
+     "SAFARI_ZONE"
+    ],
+    [
+     "ROUTE_47",
+     "EMBEDDED_TOWER"
+    ],
+    [
+     "CERULEAN_CITY",
+     "CERULEAN_CAVE"
+    ],
+    [
+     "ROUTE_35",
+     "POKEATHLON_DOME"
+    ],
+    [
+     "ROUTE_2",
+     "VIRIDIAN_FOREST"
+    ],
+    [
+     "PEWTER_CITY",
+     "VIRIDIAN_FOREST"
+    ]
+   ],
+   "aliases": {
+    "Johto Safari Zone": "SAFARI_ZONE",
+    "Cliff Edge Gate": "ROUTE_47",
+    "Pokemon Center": "CIANWOOD_CITY"
+   }
+  },
+  "soulsilver": {
+   "edges": [
+    [
+     "CIANWOOD_CITY",
+     "ROUTE_47"
+    ],
+    [
+     "ROUTE_47",
+     "ROUTE_48"
+    ],
+    [
+     "ROUTE_47",
+     "CLIFF_CAVE"
+    ],
+    [
+     "ROUTE_48",
+     "SAFARI_ZONE"
+    ],
+    [
+     "ROUTE_47",
+     "EMBEDDED_TOWER"
+    ],
+    [
+     "CERULEAN_CITY",
+     "CERULEAN_CAVE"
+    ],
+    [
+     "ROUTE_35",
+     "POKEATHLON_DOME"
+    ],
+    [
+     "ROUTE_2",
+     "VIRIDIAN_FOREST"
+    ],
+    [
+     "PEWTER_CITY",
+     "VIRIDIAN_FOREST"
+    ]
+   ],
+   "aliases": {
+    "Johto Safari Zone": "SAFARI_ZONE",
+    "Cliff Edge Gate": "ROUTE_47",
+    "Pokemon Center": "CIANWOOD_CITY"
+   }
+  },
+  "firered": {
+   "edges": [
+    [
+     "MAPSEC_TANOBY_RUINS",
+     "MAPSEC_VIAPOS_CHAMBER"
+    ],
+    [
+     "MAPSEC_VERMILION_CITY",
+     "MAPSEC_ONE_ISLAND"
+    ],
+    [
+     "MAPSEC_ONE_ISLAND",
+     "MAPSEC_TWO_ISLAND"
+    ],
+    [
+     "MAPSEC_TWO_ISLAND",
+     "MAPSEC_THREE_ISLAND"
+    ],
+    [
+     "MAPSEC_ONE_ISLAND",
+     "MAPSEC_FOUR_ISLAND"
+    ],
+    [
+     "MAPSEC_FOUR_ISLAND",
+     "MAPSEC_FIVE_ISLAND"
+    ],
+    [
+     "MAPSEC_FIVE_ISLAND",
+     "MAPSEC_SIX_ISLAND"
+    ],
+    [
+     "MAPSEC_SIX_ISLAND",
+     "MAPSEC_SEVEN_ISLAND"
+    ]
+   ]
+  },
+  "leafgreen": {
+   "edges": [
+    [
+     "MAPSEC_TANOBY_RUINS",
+     "MAPSEC_VIAPOS_CHAMBER"
+    ],
+    [
+     "MAPSEC_VERMILION_CITY",
+     "MAPSEC_ONE_ISLAND"
+    ],
+    [
+     "MAPSEC_ONE_ISLAND",
+     "MAPSEC_TWO_ISLAND"
+    ],
+    [
+     "MAPSEC_TWO_ISLAND",
+     "MAPSEC_THREE_ISLAND"
+    ],
+    [
+     "MAPSEC_ONE_ISLAND",
+     "MAPSEC_FOUR_ISLAND"
+    ],
+    [
+     "MAPSEC_FOUR_ISLAND",
+     "MAPSEC_FIVE_ISLAND"
+    ],
+    [
+     "MAPSEC_FIVE_ISLAND",
+     "MAPSEC_SIX_ISLAND"
+    ],
+    [
+     "MAPSEC_SIX_ISLAND",
+     "MAPSEC_SEVEN_ISLAND"
+    ]
+   ]
+  },
+  "ruby": {
+   "edges": [
+    [
+     "MAPSEC_ROUTE_130",
+     "MAPSEC_MIRAGE_ISLAND"
+    ]
+   ]
+  },
+  "sapphire": {
+   "edges": [
+    [
+     "MAPSEC_ROUTE_130",
+     "MAPSEC_MIRAGE_ISLAND"
+    ]
+   ]
+  },
+  "emerald": {
+   "edges": [
+    [
+     "MAPSEC_ROUTE_130",
+     "MAPSEC_MIRAGE_ISLAND"
+    ]
+   ]
+  },
+  "omegaruby": {
+   "edges": [
+    [
+     "MAPSEC_ROUTE_108",
+     "Sea Mauville"
+    ],
+    [
+     "MAPSEC_SLATEPORT_CITY",
+     "Battle Resort"
+    ],
+    [
+     "MAPSEC_LILYCOVE_CITY",
+     "Battle Resort"
+    ],
+    [
+     "Soaring in the sky",
+     "Crescent Isle"
+    ],
+    [
+     "Soaring in the sky",
+     "Fabled Cave"
+    ],
+    [
+     "Soaring in the sky",
+     "Gnarled Den"
+    ],
+    [
+     "Soaring in the sky",
+     "Mirage Cave"
+    ],
+    [
+     "Soaring in the sky",
+     "Mirage Forest"
+    ],
+    [
+     "Soaring in the sky",
+     "Mirage Island"
+    ],
+    [
+     "Soaring in the sky",
+     "Mirage Mountain"
+    ],
+    [
+     "Soaring in the sky",
+     "Nameless Cavern"
+    ],
+    [
+     "Soaring in the sky",
+     "Pathless Plain"
+    ],
+    [
+     "Soaring in the sky",
+     "Trackless Forest"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_LITTLEROOT_TOWN"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_SLATEPORT_CITY"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_LILYCOVE_CITY"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_MOSSDEEP_CITY"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_PACIFIDLOG_TOWN"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_EVER_GRANDE_CITY"
+    ]
+   ]
+  },
+  "alphasapphire": {
+   "edges": [
+    [
+     "MAPSEC_ROUTE_108",
+     "Sea Mauville"
+    ],
+    [
+     "MAPSEC_SLATEPORT_CITY",
+     "Battle Resort"
+    ],
+    [
+     "MAPSEC_LILYCOVE_CITY",
+     "Battle Resort"
+    ],
+    [
+     "Soaring in the sky",
+     "Crescent Isle"
+    ],
+    [
+     "Soaring in the sky",
+     "Fabled Cave"
+    ],
+    [
+     "Soaring in the sky",
+     "Gnarled Den"
+    ],
+    [
+     "Soaring in the sky",
+     "Mirage Cave"
+    ],
+    [
+     "Soaring in the sky",
+     "Mirage Forest"
+    ],
+    [
+     "Soaring in the sky",
+     "Mirage Island"
+    ],
+    [
+     "Soaring in the sky",
+     "Mirage Mountain"
+    ],
+    [
+     "Soaring in the sky",
+     "Nameless Cavern"
+    ],
+    [
+     "Soaring in the sky",
+     "Pathless Plain"
+    ],
+    [
+     "Soaring in the sky",
+     "Trackless Forest"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_LITTLEROOT_TOWN"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_SLATEPORT_CITY"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_LILYCOVE_CITY"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_MOSSDEEP_CITY"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_PACIFIDLOG_TOWN"
+    ],
+    [
+     "Soaring in the sky",
+     "MAPSEC_EVER_GRANDE_CITY"
+    ]
+   ]
+  }
+ },
+ "graphs": {
+  "sinnoh": {
+   "edges": [
+    [
+     "Twinleaf Town",
+     "Route 201"
+    ],
+    [
+     "Route 201",
+     "Sandgem Town"
+    ],
+    [
+     "Route 201",
+     "Lake Verity"
+    ],
+    [
+     "Lake Verity",
+     "Verity Cavern"
+    ],
+    [
+     "Sandgem Town",
+     "Route 202"
+    ],
+    [
+     "Sandgem Town",
+     "Route 219"
+    ],
+    [
+     "Route 202",
+     "Jubilife City"
+    ],
+    [
+     "Jubilife City",
+     "Route 203"
+    ],
+    [
+     "Jubilife City",
+     "Route 204"
+    ],
+    [
+     "Jubilife City",
+     "Route 218"
+    ],
+    [
+     "Route 218",
+     "Canalave City"
+    ],
+    [
+     "Canalave City",
+     "Iron Island"
+    ],
+    [
+     "Canalave City",
+     "Newmoon Island"
+    ],
+    [
+     "Canalave City",
+     "Fullmoon Island"
+    ],
+    [
+     "Route 203",
+     "Oreburgh Gate"
+    ],
+    [
+     "Oreburgh Gate",
+     "Oreburgh City"
+    ],
+    [
+     "Oreburgh City",
+     "Oreburgh Mine"
+    ],
+    [
+     "Oreburgh City",
+     "Route 207"
+    ],
+    [
+     "Route 207",
+     "Mt. Coronet"
+    ],
+    [
+     "Route 204",
+     "Ravaged Path"
+    ],
+    [
+     "Route 204",
+     "Floaroma Town"
+    ],
+    [
+     "Floaroma Town",
+     "Floaroma Meadow"
+    ],
+    [
+     "Floaroma Town",
+     "Route 205"
+    ],
+    [
+     "Route 205",
+     "Valley Windworks"
+    ],
+    [
+     "Route 205",
+     "Fuego Ironworks"
+    ],
+    [
+     "Route 205",
+     "Eterna Forest"
+    ],
+    [
+     "Eterna Forest",
+     "Old Chateau"
+    ],
+    [
+     "Route 205",
+     "Eterna City"
+    ],
+    [
+     "Eterna City",
+     "Route 211"
+    ],
+    [
+     "Eterna City",
+     "Route 206"
+    ],
+    [
+     "Route 206",
+     "Wayward Cave"
+    ],
+    [
+     "Route 206",
+     "Route 207"
+    ],
+    [
+     "Route 211",
+     "Mt. Coronet"
+    ],
+    [
+     "Route 211",
+     "Celestic Town"
+    ],
+    [
+     "Celestic Town",
+     "Route 210"
+    ],
+    [
+     "Route 210",
+     "Solaceon Town"
+    ],
+    [
+     "Route 210",
+     "Route 215"
+    ],
+    [
+     "Route 215",
+     "Veilstone City"
+    ],
+    [
+     "Solaceon Town",
+     "Solaceon Ruins"
+    ],
+    [
+     "Solaceon Ruins",
+     "Maniac Tunnel"
+    ],
+    [
+     "Maniac Tunnel",
+     "Ruin Maniac Cave"
+    ],
+    [
+     "Ruin Maniac Cave",
+     "Route 214"
+    ],
+    [
+     "Solaceon Town",
+     "Route 209"
+    ],
+    [
+     "Route 209",
+     "Lost Tower"
+    ],
+    [
+     "Route 209",
+     "Hearthome City"
+    ],
+    [
+     "Hearthome City",
+     "Route 208"
+    ],
+    [
+     "Route 208",
+     "Mt. Coronet"
+    ],
+    [
+     "Hearthome City",
+     "Route 212"
+    ],
+    [
+     "Route 212",
+     "Trophy Garden"
+    ],
+    [
+     "Route 212",
+     "Pastoria City"
+    ],
+    [
+     "Pastoria City",
+     "Great Marsh"
+    ],
+    [
+     "Pastoria City",
+     "Route 213"
+    ],
+    [
+     "Route 213",
+     "Valor Lakefront"
+    ],
+    [
+     "Valor Lakefront",
+     "Lake Valor"
+    ],
+    [
+     "Lake Valor",
+     "Valor Cavern"
+    ],
+    [
+     "Valor Lakefront",
+     "Route 214"
+    ],
+    [
+     "Route 214",
+     "Veilstone City"
+    ],
+    [
+     "Route 214",
+     "Sendoff Spring"
+    ],
+    [
+     "Sendoff Spring",
+     "Turnback Cave"
+    ],
+    [
+     "Valor Lakefront",
+     "Route 222"
+    ],
+    [
+     "Route 222",
+     "Sunyshore City"
+    ],
+    [
+     "Sunyshore City",
+     "Route 223"
+    ],
+    [
+     "Route 223",
+     "Pokémon League"
+    ],
+    [
+     "Pokémon League",
+     "Victory Road"
+    ],
+    [
+     "Victory Road",
+     "Route 224"
+    ],
+    [
+     "Route 224",
+     "Flower Paradise"
+    ],
+    [
+     "Mt. Coronet",
+     "Route 216"
+    ],
+    [
+     "Mt. Coronet",
+     "Spear Pillar"
+    ],
+    [
+     "Spear Pillar",
+     "Hall of Origin"
+    ],
+    [
+     "Mt. Coronet",
+     "Distortion World"
+    ],
+    [
+     "Route 216",
+     "Route 217"
+    ],
+    [
+     "Route 217",
+     "Acuity Lakefront"
+    ],
+    [
+     "Acuity Lakefront",
+     "Lake Acuity"
+    ],
+    [
+     "Acuity Lakefront",
+     "Snowpoint City"
+    ],
+    [
+     "Snowpoint City",
+     "Snowpoint Temple"
+    ],
+    [
+     "Route 219",
+     "Route 220"
+    ],
+    [
+     "Route 220",
+     "Route 221"
+    ],
+    [
+     "Route 221",
+     "Pal Park"
+    ],
+    [
+     "Snowpoint City",
+     "Fight Area"
+    ],
+    [
+     "Fight Area",
+     "Route 225"
+    ],
+    [
+     "Fight Area",
+     "Route 230"
+    ],
+    [
+     "Route 225",
+     "Survival Area"
+    ],
+    [
+     "Survival Area",
+     "Route 226"
+    ],
+    [
+     "Route 226",
+     "Route 227"
+    ],
+    [
+     "Route 226",
+     "Route 228"
+    ],
+    [
+     "Route 227",
+     "Stark Mountain"
+    ],
+    [
+     "Route 227",
+     "Route 228"
+    ],
+    [
+     "Route 228",
+     "Route 229"
+    ],
+    [
+     "Route 229",
+     "Resort Area"
+    ],
+    [
+     "Route 229",
+     "Route 230"
+    ],
+    [
+     "Grand Underground",
+     "Ramanas Park"
+    ]
+   ],
+   "aliases": {
+    "Iron Island area": "Iron Island",
+    "Lake Acuity Cavern": "Lake Acuity",
+    "Lake Valor Cavern": "Valor Cavern",
+    "Eterna City Condominiums": "Eterna City",
+    "Mount Coronet": "Mt. Coronet"
+   }
+  }
+ },
+ "games": {
+  "diamond": "sinnoh",
+  "pearl": "sinnoh",
+  "platinum": "sinnoh",
+  "brilliantdiamond": "sinnoh",
+  "shiningpearl": "sinnoh"
+ },
+ "sources": {
+  "sinnoh": "Hand-built; cave and building links checked against Platinum's map data (pret/pokeplatinum)"
+ }
+}

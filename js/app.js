@@ -47,7 +47,7 @@ let sortKey = 'home', sortAsc = true;
 let filters = {};
 let layoutCache = {};
 let boxIndex = 0;
-let FINDER = null, ENC = null, MOVES = null, EVO = null, showAllGames = false;
+let FINDER = null, ENC = null, MOVES = null, EVO = null, CONN = null, showAllGames = false;
 let routeGame = '', routeArea = '';
 let EVENTS = [];
 const dataGames = () => GAMES.filter(g => !NO_DATA.has(g.id));
@@ -601,37 +601,98 @@ function renderFilters() {
   const n = Object.values(filters).filter(Boolean).length;
   $('filterCount').textContent = n ? `(${n})` : '';
 }
+let routeOnlyMissing = false;
+// Areas for a game, merged by name, each with its uncaught count for the chosen dex.
+function routeAreas(game, dex) {
+  const merged = new Map();
+  for (const a of FINDER.areasFor(game)) {
+    if (!merged.has(a.name)) merged.set(a.name, { name: a.name, ids: [], list: [] });
+    const m = merged.get(a.name); m.ids.push(a.id); m.list.push(...a.list);
+  }
+  for (const m of merged.values()) {
+    const slots = new Map();
+    for (const e of m.list) for (const sl of FINDER.slotsForPid(e.pid)) slots.set(sl.key, sl);
+    m.slots = [...slots.values()];
+    m.missing = m.slots.filter(sl => !(dex === 'shiny' && sl.shinyLock) && !prog(dex, sl).c).length;
+  }
+  return [...merged.values()].sort((x, y) => x.name.localeCompare(y.name, undefined, { numeric: true }));
+}
+// Neighbouring areas (with Pokémon) via the connection graph; walks through towns with no encounters.
+function routeNeighbors(game, area, byName) {
+  const g = CONN && CONN.games[game];
+  if (!g) return null;
+  const graph = CONN.graphs[g.graph];
+  const nodeOf = (id) => g.areas[String(id)];
+  const nodeAreas = new Map();
+  for (const a of byName.values()) for (const id of a.ids) { const n = nodeOf(id); if (n) { if (!nodeAreas.has(n)) nodeAreas.set(n, new Set()); nodeAreas.get(n).add(a.name); } }
+  const start = area.ids.map(nodeOf).find(Boolean);
+  if (!start) return [];
+  const out = new Map();
+  for (const nm of nodeAreas.get(start) || []) if (nm !== area.name) out.set(nm, null);
+  const seen = new Set([start]);
+  let frontier = [[start, null]];
+  for (let depth = 0; depth < 3 && frontier.length; depth++) {
+    const next = [];
+    for (const [node, via] of frontier) for (const nb of graph.adj[node] || []) {
+      if (seen.has(nb)) continue; seen.add(nb);
+      const here = nodeAreas.get(nb);
+      if (here) { for (const nm of here) if (!out.has(nm) && nm !== area.name) out.set(nm, via); }
+      else next.push([nb, via || (graph.names[nb] || nb)]);
+    }
+    frontier = next;
+  }
+  return [...out.entries()].map(([nm, via]) => ({ area: byName.get(nm), via })).filter(x => x.area);
+}
 function renderRoutes() {
   const v = $('routesView');
   if (!FINDER) { v.innerHTML = '<p class="muted">Loading location data…</p>'; return; }
   const opts = dataGames().filter(g => S().owned[g.id]);
   if (!routeGame || !GAME_VERSIONS_OK(routeGame)) routeGame = opts[0]?.id || 'red';
-  const areas = FINDER.areasFor(routeGame);
-  if (!areas.find(a => String(a.id) === String(routeArea))) routeArea = areas[0]?.id ?? '';
-  const area = areas.find(a => String(a.id) === String(routeArea));
   const dex = v.dataset.dex || 'living';
-  let rows = '';
+  const all = routeAreas(routeGame, dex);
+  const byName = new Map(all.map(a => [a.name, a]));
+  const list = routeOnlyMissing ? all.filter(a => a.missing || a.name === routeArea) : all;
+  if (!byName.has(routeArea)) routeArea = (list[0] || all[0] || {}).name || '';
+  const area = byName.get(routeArea);
+  const idx = list.findIndex(a => a.name === routeArea);
+  const label = (a) => `${a.name}${a.missing ? ` · ${a.missing} missing` : ' · ✓'}`;
+  let rows = '', nearby = '';
   if (area) {
     const byPid = new Map();
     for (const e of area.list) { if (!byPid.has(e.pid)) byPid.set(e.pid, []); byPid.get(e.pid).push(e); }
-    const items = [...byPid.entries()].map(([pid, list]) => ({ pid, list, slots: FINDER.slotsForPid(pid) })).filter(x => x.slots.length);
-    items.sort((a, b) => Math.min(...a.list.map(e => e.tier[0])) - Math.min(...b.list.map(e => e.tier[0])) || a.slots[0].sid - b.slots[0].sid);
-    rows = items.map(({ list, slots }) => {
-      const missing = slots.filter(s => !(dex === 'shiny' && s.shinyLock) && !prog(dex, s).c);
+    const items = [...byPid.entries()].map(([pid, l]) => ({ pid, list: l, slots: FINDER.slotsForPid(pid) })).filter(x => x.slots.length);
+    const miss = (sl) => sl.filter(s => !(dex === 'shiny' && s.shinyLock) && !prog(dex, s).c);
+    items.sort((a, b) => (miss(b.slots).length > 0) - (miss(a.slots).length > 0) || Math.min(...a.list.map(e => e.tier[0])) - Math.min(...b.list.map(e => e.tier[0])) || a.slots[0].sid - b.slots[0].sid);
+    rows = items.map(({ list: l, slots }) => {
+      const missing = miss(slots);
       const s = slots[0];
-      const methods = [...new Set(list.map(e => `<span class="tier t${e.tier[0]}">${e.tier[1]}</span> ${methodLabel(e.method)} Lv ${e.lo}${e.hi !== e.lo ? '–' + e.hi : ''}${e.rar ? ' · ' + e.rar + '%' : ''}${e.conds.length ? ' · ' + e.conds.join(', ') : ''}`))].join('<br>');
-      return `<div class="card${missing.length ? '' : ' caught'}" data-key="${esc(s.key)}" style="flex-direction:row;align-items:flex-start;text-align:left">
+      const methods = [...new Set(l.map(e => `<span class="tier t${e.tier[0]}">${e.tier[1]}</span> ${methodLabel(e.method)} Lv ${e.lo}${e.hi !== e.lo ? '–' + e.hi : ''}${e.rar ? ' · ' + e.rar + '%' : ''}${e.conds.length ? ' · ' + e.conds.join(', ') : ''}`))].join('<br>');
+      const which = missing.length && slots.length > 1 ? `<div class="small" style="color:var(--accent)">Need: ${missing.map(m => esc(displayName(m).replace(s.species, '').trim() || formLabel(m) || 'regular')).join(', ')}</div>` : '';
+      return `<div class="card${missing.length ? '' : ' caught'}" data-key="${esc((missing[0] || s).key)}" style="flex-direction:row;align-items:flex-start;text-align:left">
         <img loading="lazy" src="${spriteUrl(s, dex === 'shiny')}" alt="" style="width:56px;height:56px">
         <div style="flex:1"><div class="nm" style="text-align:left">${esc(s.species)}${missing.length ? ` <span class="flag" style="position:static">${missing.length} missing</span>` : ' ✓'}</div>
-        <div class="small muted">${methods}</div></div></div>`;
+        ${which}<div class="small muted">${methods}</div></div></div>`;
     }).join('');
+    const nb = routeNeighbors(routeGame, area, byName);
+    if (nb === null) nearby = '<p class="muted small">Connected areas aren’t mapped for this game yet. Use ‹ › to step through areas.</p>';
+    else if (nb.length) nearby = `<div class="nearby"><span class="muted small">Nearby:</span>${nb.sort((a, b) => b.area.missing - a.area.missing || a.area.name.localeCompare(b.area.name, undefined, { numeric: true }))
+      .map(x => `<button class="chip${x.area.missing ? ' hot' : ''}" data-area="${esc(x.area.name)}">${esc(x.area.name)}${x.area.missing ? ` <b>${x.area.missing}</b>` : ' ✓'}${x.via ? `<span class="muted"> via ${esc(x.via)}</span>` : ''}</button>`).join('')}</div>`;
   }
+  const src = CONN && CONN.games[routeGame];
+  const note = src ? (src.source === 'exact' ? (src.remake ? 'Connections come from the original game’s map data; the remake’s layout is the same apart from the extra areas added by hand.' : 'Connections come from the game’s own map data.') : 'Connections were built by hand (caves and buildings checked against Platinum’s map data). Tell me if one looks wrong.') : '';
+  const total = all.filter(a => a.missing).length;
   v.innerHTML = `<div class="toolbar">
       <select id="routeGame">${opts.map(o => `<option value="${o.id}"${o.id === routeGame ? ' selected' : ''}>${esc(o.name)}</option>`).join('')}</select>
-      <select id="routeArea">${areas.map(a => `<option value="${a.id}"${String(a.id) === String(routeArea) ? ' selected' : ''}>${esc(a.name)}</option>`).join('')}</select>
-      <select id="routeDex"><option value="living"${dex === 'living' ? ' selected' : ''}>Living dex</option><option value="shiny"${dex === 'shiny' ? ' selected' : ''}>Shiny dex</option></select></div>
+      <select id="routeDex"><option value="living"${dex === 'living' ? ' selected' : ''}>Living dex</option><option value="shiny"${dex === 'shiny' ? ' selected' : ''}>Shiny dex</option></select>
+      <label class="small"><input type="checkbox" id="routeOnlyMissing"${routeOnlyMissing ? ' checked' : ''}> Only areas with missing</label></div>
+    <div class="toolbar route-nav">
+      <button class="ghost" id="routePrev"${idx <= 0 ? ' disabled' : ''}>‹</button>
+      <select id="routeArea">${list.map(a => `<option value="${esc(a.name)}"${a.name === routeArea ? ' selected' : ''}>${esc(label(a))}</option>`).join('')}</select>
+      <button class="ghost" id="routeNext"${idx < 0 || idx >= list.length - 1 ? ' disabled' : ''}>›</button></div>
+    ${area ? `<div class="area-flag${area.missing ? ' hot' : ''}">${area.missing ? `${area.missing} uncaught ${dex === 'shiny' ? 'shiny ' : ''}form${area.missing === 1 ? '' : 's'} here` : 'Everything here is caught ✓'}<span class="muted small"> · ${total} of ${all.length} areas in this game still have something to catch</span></div>` : ''}
+    ${nearby}
     <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">${rows || '<p class="muted">Nothing recorded here.</p>'}</div>
-    <p class="muted small">Newer games (Shining Pearl, Legends: Arceus, Violet, Z-A) don't publish spawn rates, so their spots show as \u201cListed\u201d.</p>`;
+    <p class="muted small">${note} Newer games (Shining Pearl, Legends: Arceus, Violet, Z-A) don't publish spawn rates, so their spots show as “Listed”.</p>`;
 }
 const GAME_VERSIONS_OK = (g) => dataGames().some(x => x.id === g && S().owned[x.id]);
 const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
@@ -738,15 +799,27 @@ async function main() {
     if (e.target.id === 'routeGame') { routeGame = e.target.value; routeArea = ''; }
     if (e.target.id === 'routeArea') routeArea = e.target.value;
     if (e.target.id === 'routeDex') $('routesView').dataset.dex = e.target.value;
+    if (e.target.id === 'routeOnlyMissing') routeOnlyMissing = e.target.checked;
     renderRoutes();
   });
-  $('routesView').addEventListener('click', (e) => { const c = e.target.closest('.card'); if (c) openDetail(BYKEY.get(c.dataset.key)); });
+  $('routesView').addEventListener('click', (e) => {
+    const chip = e.target.closest('[data-area]');
+    if (chip) { routeArea = chip.dataset.area; renderRoutes(); window.scrollTo({ top: 0 }); return; }
+    if (e.target.id === 'routePrev' || e.target.id === 'routeNext') {
+      const opts = [...$('routeArea').options].map(o => o.value);
+      const i = opts.indexOf(routeArea) + (e.target.id === 'routeNext' ? 1 : -1);
+      if (opts[i] != null) { routeArea = opts[i]; renderRoutes(); }
+      return;
+    }
+    const c = e.target.closest('.card'); if (c) openDetail(BYKEY.get(c.dataset.key));
+  });
   $('dashboardView').addEventListener('change', (e) => { if (e.target.id === 'dashGame') { filters.game = e.target.value; renderDashboard(); } });
   $('banner').addEventListener('click', (e) => {
     if (e.target.dataset.act === 'toEvents') { e.preventDefault(); $('tabs').querySelector('[data-view=events]').click(); }
     if (e.target.dataset.act === 'hideBanner') { try { sessionStorage.setItem('bannerHidden', EVENTS.filter(x => eventStatus(x) === 'active' && eventMissing(x).length).map(x => x.id).join()); } catch (err) {} $('banner').classList.add('hidden'); }
   });
   fetch('data/events.json').then(r => r.json()).then(d => { EVENTS = d.events || []; EVENTS.updated = d.updated; refresh(); }).catch(() => {});
+  fetch('data/connections.json').then(r => r.json()).then(d => { CONN = d; if (view === 'routes') renderRoutes(); }).catch(() => {});
   renderAccount(null);
   refresh();
   Promise.all([fetch('data/encounters.json').then(r => r.json()), fetch('data/moves.json').then(r => r.json()), fetch('data/evolutions.json').then(r => r.json())]).then(([enc, moves, evo]) => {

@@ -132,3 +132,13 @@ details { margin: 4px 0; } summary { cursor: pointer; }
 .evo-method { font-size: 12px; padding: 2px 0 0 22px; }
 .evo-method.mine { color: var(--accent); }
 .evo-method > div + div { margin-top: 2px; }
+.route-nav { flex-wrap: nowrap; }
+.route-nav select { flex: 1; min-width: 0; }
+.route-nav button { font-size: 20px; padding: 2px 14px; }
+.route-nav button:disabled { opacity: .3; }
+.area-flag { padding: 8px 12px; border-radius: 8px; background: var(--caught-bg); color: var(--caught); font-weight: 600; margin-bottom: 8px; }
+.area-flag.hot { background: var(--warn-bg); color: var(--accent); }
+.nearby { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 8px; }
+.chip { font-size: 12px; padding: 4px 10px; border-radius: 99px; background: var(--panel); border: 1px solid var(--line); }
+.chip.hot { border-color: var(--accent); }
+.chip b { color: var(--accent); }
