@@ -339,7 +339,9 @@ function evoInGame(slot, game) {
   if (G == null) return { ok: true, txt: evoRowsFor(slot).filter(r => r.cur).map(r => r.txt)[0] || 'Evolve' };
   if (EVO.vgWithData.includes(G) && !(EVO.present[slot.sid] || []).includes(G)) return { ok: false };
   const regions = EVO.vgRegions[G] || [];
-  const ok = evoRowsFor(slot).filter(r => r.vg <= G && (!r.locRegion || regions.includes(r.locRegion)) && (!r.region || regions.includes(r.region)));
+  // In a region with its own evolution (Alola, Galar, Hisui), only the regional one happens there.
+  const regionalHere = ((EVO.evo[slot.sid]) || []).some(r => r.region && r.vg <= G && regions.includes(r.region));
+  const ok = evoRowsFor(slot).filter(r => r.vg <= G && (!r.locRegion || regions.includes(r.locRegion)) && (!r.region || regions.includes(r.region)) && (!regionalHere || r.region));
   if (!ok.length) return { ok: false };
   const top = Math.max(...ok.map(r => r.vg));
   return { ok: true, txt: [...new Set(ok.filter(r => r.vg === top).map(r => r.txt))].join(' or ') };
@@ -354,7 +356,7 @@ function viaText(viaSid, target, game) {
   }
   const name = (baseSlotOf(viaSid) || {}).species || '#' + viaSid;
   const how = steps.map((st, i) => evoInGame(i === steps.length - 1 ? target : st, game));
-  if (how.some(h => !h.ok)) return `Catch ${esc(name)}, but it can't evolve into ${esc(target.species)} in this game — move it to a game where it can`;
+  if (how.some(h => !h.ok)) return null;
   return `Catch ${esc(name)}, then evolve: ${how.map(h => esc(h.txt)).join(' → ')}`;
 }
 function methodLines(rows, slot) {
@@ -362,11 +364,13 @@ function methodLines(rows, slot) {
   const byTarget = new Map();
   for (const r of rows) { const k = r.toLabel || ''; if (!byTarget.has(k)) byTarget.set(k, []); byTarget.get(k).push(r); }
   let h = '';
+  const regional = [...new Set(rows.filter(r => r.region).map(r => EVO.regionName[r.region]))];
   for (const [label, list] of byTarget) {
     const mine = slot && list.some(r => r.toForm === slot.fid);
+    const outside = regional.length && !list.some(r => r.region) ? ` <span class="muted">· not in ${esc(regional.join(' or '))}</span>` : '';
     h += `<div class="evo-method${mine ? ' mine' : ''}">${label ? `<b>${esc(label)}:</b> ` : ''}`;
-    if (list.length === 1) h += `${esc(list[0].txt)} <span class="muted">· since ${vgl(list[0].vg)}</span>`;
-    else h += list.map(r => `<div><span class="muted">${r.cur ? 'Now' : 'From ' + vgl(r.vg)}:</span> ${esc(r.txt)}${r.cur ? ` <span class="muted">(since ${vgl(r.vg)})</span>` : ''}</div>`).join('');
+    if (list.length === 1) h += `${esc(list[0].txt)} <span class="muted">· since ${vgl(list[0].vg)}</span>${outside}`;
+    else h += list.map(r => `<div><span class="muted">${r.cur ? 'Now' : 'From ' + vgl(r.vg)}:</span> ${esc(r.txt)}${r.cur ? ` <span class="muted">(since ${vgl(r.vg)})</span>` : ''}</div>`).join('') + outside;
     h += '</div>';
   }
   return h;
@@ -405,17 +409,21 @@ function findHtml(s) {
   const groups = new Map();
   for (const e of r.direct) { if (!groups.has(e.game)) groups.set(e.game, []); groups.get(e.game).push(e); }
   for (const [g, list] of groups) {
-    const seen = new Set();
+    const seen = new Set(), stuck = new Set();
+    const usable = list.filter(e => { if (!e.via) return true; const v = viaText(e.via, s, g); if (!v) stuck.add(e.via); e.viaHtml = v; return !!v; });
     h += `<div class="panel" style="margin:6px 0;padding:8px"><b>${esc(gameName(g))}</b>${VC_ONLY.has(g) ? ' <span class="muted small">(Home only via 3DS Virtual Console)</span>' : ''}`;
-    for (const e of list.slice(0, 40)) {
+    for (const e of usable.slice(0, 40)) {
       const k = e.place + e.method + e.via + e.conds.join();
       if (seen.has(k)) continue; seen.add(k);
       h += `<div class="small" style="padding:3px 0;border-top:1px solid var(--line)">
         <span class="tier t${e.tier[0]}">${e.tier[1]}</span> ${esc(e.place)} · ${esc(methodLabel(e.method))} · Lv ${e.lo}${e.hi !== e.lo ? '–' + e.hi : ''}${e.rar ? ' · ' + e.rar + '%' : ''}
-        ${e.conds.length ? `<span class="muted"> · ${esc(e.conds.join(', '))}</span>` : ''}${e.via ? `<br><span class="muted">${viaText(e.via, s, g)}</span>` : ''}</div>`;
+        ${e.conds.length ? `<span class="muted"> · ${esc(e.conds.join(', '))}</span>` : ''}${e.via ? `<br><span class="muted">${e.viaHtml}</span>` : ''}</div>`;
     }
+    if (stuck.size) h += `<div class="small muted" style="padding:3px 0;border-top:1px solid var(--line)">${esc([...stuck].map(v => (baseSlotOf(v) || {}).species).join(', '))} ${stuck.size > 1 ? 'are' : 'is'} here, but can't evolve into ${esc(s.species)}${formLabel(s) ? ' (' + esc(formLabel(s)) + ')' : ''} in this game. Catch here and evolve in another game.</div>`;
     h += '</div>';
   }
+  // Only list games where the hatched baby can actually evolve into this slot.
+  if (s.from) r.breed = r.breed.filter(g => r.famBase.some(b => viaText(b.sid, s, g)));
   if (r.breed.length) {
     const bases = r.famBase.map(x => x.species).join(' or ');
     h += `<p class="small"><b>Breed:</b> leave any member of the family with a Ditto (or a partner of the opposite gender) to hatch ${esc(bases)}${s.from ? ', then evolve' : ''}. Works in ${esc(r.breed.map(gameName).join(', '))}.</p>`;
@@ -743,7 +751,7 @@ async function main() {
   refresh();
   Promise.all([fetch('data/encounters.json').then(r => r.json()), fetch('data/moves.json').then(r => r.json()), fetch('data/evolutions.json').then(r => r.json())]).then(([enc, moves, evo]) => {
     ENC = enc; MOVES = moves; EVO = evo;
-    FINDER = createFinder({ slots: SLOTS, games: GAMES, settings: S, enc: ENC });
+    FINDER = createFinder({ slots: SLOTS, games: GAMES, settings: S, enc: ENC, canVia: (v, slot, g) => !!viaText(v, slot, g) });
     refresh();
     if (!$('detail').classList.contains('hidden')) openDetail(findAny($('detail').dataset.key));
   }).catch(err => console.error('Extra data failed to load', err));

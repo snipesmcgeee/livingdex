@@ -52,7 +52,7 @@ export function tier(method, rarity) {
   return [2, 'Listed'];
 }
 
-export function createFinder({ slots, games, settings, enc }) {
+export function createFinder({ slots, games, settings, enc, canVia = () => true }) {
   const verToGame = {};
   for (const [g, vs] of Object.entries(GAME_VERSIONS)) for (const [v, dlc] of vs) verToGame[v] = [g, dlc];
   const bySid = new Map();
@@ -61,7 +61,8 @@ export function createFinder({ slots, games, settings, enc }) {
 
   function pidFor(sid, suffix) {
     const list = bySid.get(sid) || [];
-    if (suffix) { const r = list.find(x => x.ident.includes(suffix) && !x.gmax); return r ? r.pid : null; }
+    // A regional evolution can come from a plain pre-evolution (Pikachu -> Alolan Raichu), so fall back to the base form.
+    if (suffix) { const r = list.find(x => x.ident.includes(suffix) && !x.gmax); if (r) return r.pid; }
     const b = list.find(x => x.formType === 'base') || list[0];
     return b ? b.pid : sid;
   }
@@ -119,7 +120,7 @@ export function createFinder({ slots, games, settings, enc }) {
     const set = new Set();
     for (const s of slots) {
       const r = find(s, { showAll: true, onlyGame: game });
-      const ok = r.direct.some(e => !e.dlc || settings().dlc[game + ':' + e.dlc]) || r.extra.some(e => e.game === game);
+      const ok = r.direct.some(e => (!e.dlc || settings().dlc[game + ':' + e.dlc]) && (!e.via || canVia(e.via, s, game))) || r.extra.some(e => e.game === game);
       if (ok) set.add(s.key);
     }
     gameCache.set(k, set);

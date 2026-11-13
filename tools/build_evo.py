@@ -189,6 +189,7 @@ for v in evo.values():
 
 out = {
     'vgLabel': vg_label,
+    'regionName': {int(k): v for k, v in region_name.items()},
     'vgRegions': {k: sorted(v) for k, v in vg_regions.items()},
     'verVg': ver_vg,
     'vgWithData': sorted(vg_with_data),
