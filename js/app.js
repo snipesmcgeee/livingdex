@@ -626,7 +626,7 @@ function routeNeighbors(game, area, byName) {
   const nodeAreas = new Map();
   for (const a of byName.values()) for (const id of a.ids) { const n = nodeOf(id); if (n) { if (!nodeAreas.has(n)) nodeAreas.set(n, new Set()); nodeAreas.get(n).add(a.name); } }
   const start = area.ids.map(nodeOf).find(Boolean);
-  if (!start) return [];
+  if (!start) return undefined;
   const out = new Map();
   for (const nm of nodeAreas.get(start) || []) if (nm !== area.name) out.set(nm, null);
   const seen = new Set([start]);
@@ -675,11 +675,12 @@ function renderRoutes() {
     }).join('');
     const nb = routeNeighbors(routeGame, area, byName);
     if (nb === null) nearby = '<p class="muted small">Connected areas aren’t mapped for this game yet. Use ‹ › to step through areas.</p>';
+    else if (nb === undefined) nearby = '<p class="muted small">This spot isn’t placed on the map yet. Use ‹ › to step through areas.</p>';
     else if (nb.length) nearby = `<div class="nearby"><span class="muted small">Nearby:</span>${nb.sort((a, b) => b.area.missing - a.area.missing || a.area.name.localeCompare(b.area.name, undefined, { numeric: true }))
       .map(x => `<button class="chip${x.area.missing ? ' hot' : ''}" data-area="${esc(x.area.name)}">${esc(x.area.name)}${x.area.missing ? ` <b>${x.area.missing}</b>` : ' ✓'}${x.via ? `<span class="muted"> via ${esc(x.via)}</span>` : ''}</button>`).join('')}</div>`;
   }
   const src = CONN && CONN.games[routeGame];
-  const note = src ? (src.source === 'exact' ? (src.remake ? 'Connections come from the original game’s map data; the remake’s layout is the same apart from the extra areas added by hand.' : 'Connections come from the game’s own map data.') : 'Connections were built by hand (caves and buildings checked against Platinum’s map data). Tell me if one looks wrong.') : '';
+  const note = src ? (src.source === 'exact' ? (src.remake ? 'Connections come from the original game’s map data; the remake’s layout is the same apart from the extra areas added by hand.' : 'Connections come from the game’s own map data.') : (src.note || 'Connections were built by hand.') + ' Tell me if one looks wrong.') : '';
   const total = all.filter(a => a.missing).length;
   v.innerHTML = `<div class="toolbar">
       <select id="routeGame">${opts.map(o => `<option value="${o.id}"${o.id === routeGame ? ' selected' : ''}>${esc(o.name)}</option>`).join('')}</select>

@@ -224,7 +224,8 @@ for game, gid in GAME_GRAPH.items():
         elif not any(norm(c) in skip or norm(c).startswith('unknown') or norm(c).startswith('all') for c in cands):
             unmatched.append(nm)
     out['games'][game] = {'graph': gid, 'areas': {str(k): v for k, v in area_node.items()},
-                          'source': SOURCE.get(gid, 'manual'), 'remake': game in REMAKE}
+                          'source': SOURCE.get(gid, 'manual'), 'remake': game in REMAKE,
+                          'note': manual.get('sources', {}).get(gid.split('+')[0], '')}
     report[game] = (len(area_node), len(game_areas.get(game, ())), sorted(unmatched))
 for gid, (names, edges) in GRAPHS.items():
     adj = defaultdict(set)

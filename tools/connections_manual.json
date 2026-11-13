@@ -15,7 +15,19 @@
   "Sinjoy Ruins",
   "Sinnoh Pokemart",
   "Riley",
-  "Traveling Man"
+  "Traveling Man",
+  "Kalos Berry Fields",
+  "Alola Berry Fields",
+  "Poké Pelago",
+  "Kalos (Roaming)",
+  "Roaming Galar Wild Areas",
+  "Roaming the Crown Tundra",
+  "Roaming the Isle of Armor",
+  "Random caves across the Isle of Armor",
+  "——————",
+  "Tera Raid Battles",
+  "Hyperspace",
+  "Team Flare Secret HQ (Unova)"
  ],
  "aliases": {
   "rby": {
@@ -762,6 +774,2585 @@
     "Eterna City Condominiums": "Eterna City",
     "Mount Coronet": "Mt. Coronet"
    }
+  },
+  "unova_bw": {
+   "edges": [
+    [
+     "Abundant Shrine",
+     "Route 14"
+    ],
+    [
+     "Accumula Town",
+     "Route 1"
+    ],
+    [
+     "Accumula Town",
+     "Route 2"
+    ],
+    [
+     "Black City / White Forest",
+     "Route 14"
+    ],
+    [
+     "Black City / White Forest",
+     "Route 15"
+    ],
+    [
+     "Castelia City",
+     "Game Freak HQ"
+    ],
+    [
+     "Castelia City",
+     "Liberty Garden"
+    ],
+    [
+     "Castelia City",
+     "Route 4"
+    ],
+    [
+     "Castelia City",
+     "Skyarrow Bridge"
+    ],
+    [
+     "Celestial Tower",
+     "Route 7"
+    ],
+    [
+     "Challenger's Cave",
+     "Route 9"
+    ],
+    [
+     "Chargestone Cave",
+     "Mistralton City"
+    ],
+    [
+     "Chargestone Cave",
+     "Route 6"
+    ],
+    [
+     "Cold Storage",
+     "Driftveil City"
+    ],
+    [
+     "Desert Resort",
+     "Relic Castle"
+    ],
+    [
+     "Desert Resort",
+     "Route 4"
+    ],
+    [
+     "Dragonspiral Tower",
+     "Icirrus City"
+    ],
+    [
+     "Dreamyard",
+     "Striaton City"
+    ],
+    [
+     "Driftveil City",
+     "Driftveil Drawbridge"
+    ],
+    [
+     "Driftveil City",
+     "Route 6"
+    ],
+    [
+     "Driftveil Drawbridge",
+     "Route 5"
+    ],
+    [
+     "Giant Chasm",
+     "Route 13"
+    ],
+    [
+     "Guidance Chamber",
+     "Mistralton Cave"
+    ],
+    [
+     "Icirrus City",
+     "Route 8"
+    ],
+    [
+     "Icirrus City",
+     "Twist Mountain"
+    ],
+    [
+     "Lacunosa Town",
+     "Route 12"
+    ],
+    [
+     "Lacunosa Town",
+     "Route 13"
+    ],
+    [
+     "Lostlorn Forest",
+     "Route 16"
+    ],
+    [
+     "Marvelous Bridge",
+     "Route 15"
+    ],
+    [
+     "Marvelous Bridge",
+     "Route 16"
+    ],
+    [
+     "Mistralton Cave",
+     "Route 6"
+    ],
+    [
+     "Mistralton City",
+     "Route 7"
+    ],
+    [
+     "Moor of Icirrus",
+     "Route 8"
+    ],
+    [
+     "N's Castle",
+     "Pokémon League"
+    ],
+    [
+     "Nacrene City",
+     "Pinwheel Forest"
+    ],
+    [
+     "Nacrene City",
+     "Route 3"
+    ],
+    [
+     "Nimbasa City",
+     "Route 16"
+    ],
+    [
+     "Nimbasa City",
+     "Route 4"
+    ],
+    [
+     "Nimbasa City",
+     "Route 5"
+    ],
+    [
+     "Nuvema Town",
+     "Route 1"
+    ],
+    [
+     "Opelucid City",
+     "Route 10"
+    ],
+    [
+     "Opelucid City",
+     "Route 11"
+    ],
+    [
+     "Opelucid City",
+     "Route 9"
+    ],
+    [
+     "P2 Laboratory",
+     "Route 17"
+    ],
+    [
+     "P2 Laboratory",
+     "Route 18"
+    ],
+    [
+     "Pinwheel Forest",
+     "Skyarrow Bridge"
+    ],
+    [
+     "Pokémon League",
+     "Victory Road"
+    ],
+    [
+     "Route 1",
+     "Route 17"
+    ],
+    [
+     "Route 10",
+     "Victory Road"
+    ],
+    [
+     "Route 11",
+     "Village Bridge"
+    ],
+    [
+     "Route 12",
+     "Village Bridge"
+    ],
+    [
+     "Route 13",
+     "Undella Town"
+    ],
+    [
+     "Route 14",
+     "Undella Town"
+    ],
+    [
+     "Route 17",
+     "Route 18"
+    ],
+    [
+     "Route 2",
+     "Striaton City"
+    ],
+    [
+     "Route 3",
+     "Striaton City"
+    ],
+    [
+     "Route 3",
+     "Wellspring Cave"
+    ],
+    [
+     "Route 7",
+     "Twist Mountain"
+    ],
+    [
+     "Route 8",
+     "Tubeline Bridge"
+    ],
+    [
+     "Route 9",
+     "Tubeline Bridge"
+    ],
+    [
+     "Trial Chamber",
+     "Victory Road"
+    ],
+    [
+     "Undella Bay",
+     "Undella Town"
+    ]
+   ],
+   "aliases": {
+    "Black City": "Black City / White Forest",
+    "White Forest": "Black City / White Forest",
+    "Game Freak HQ 1F": "Game Freak HQ"
+   }
+  },
+  "unova_b2w2": {
+   "edges": [
+    [
+     "Abundant Shrine",
+     "Route 14"
+    ],
+    [
+     "Accumula Town",
+     "Route 1"
+    ],
+    [
+     "Accumula Town",
+     "Route 2"
+    ],
+    [
+     "Aspertia City",
+     "Route 19"
+    ],
+    [
+     "Black City / White Forest",
+     "Route 14"
+    ],
+    [
+     "Black City / White Forest",
+     "Route 15"
+    ],
+    [
+     "Castelia City",
+     "Castelia Sewers"
+    ],
+    [
+     "Castelia City",
+     "Game Freak HQ"
+    ],
+    [
+     "Castelia City",
+     "Liberty Garden"
+    ],
+    [
+     "Castelia City",
+     "Route 4"
+    ],
+    [
+     "Castelia City",
+     "Skyarrow Bridge"
+    ],
+    [
+     "Castelia City",
+     "Virbank City"
+    ],
+    [
+     "Castelia Sewers",
+     "Relic Passage"
+    ],
+    [
+     "Celestial Tower",
+     "Route 7"
+    ],
+    [
+     "Chargestone Cave",
+     "Mistralton City"
+    ],
+    [
+     "Chargestone Cave",
+     "Route 6"
+    ],
+    [
+     "Clay Tunnel",
+     "Driftveil City"
+    ],
+    [
+     "Clay Tunnel",
+     "Mistralton Cave"
+    ],
+    [
+     "Clay Tunnel",
+     "Twist Mountain"
+    ],
+    [
+     "Clay Tunnel",
+     "Underground Ruins"
+    ],
+    [
+     "Cold Storage",
+     "Driftveil City"
+    ],
+    [
+     "Desert Resort",
+     "Relic Castle"
+    ],
+    [
+     "Desert Resort",
+     "Route 4"
+    ],
+    [
+     "Dragonspiral Tower",
+     "Icirrus City"
+    ],
+    [
+     "Dreamyard",
+     "Striaton City"
+    ],
+    [
+     "Driftveil City",
+     "Driftveil Drawbridge"
+    ],
+    [
+     "Driftveil City",
+     "Relic Passage"
+    ],
+    [
+     "Driftveil City",
+     "Route 6"
+    ],
+    [
+     "Driftveil Drawbridge",
+     "Route 5"
+    ],
+    [
+     "Floccesy Ranch",
+     "Route 20"
+    ],
+    [
+     "Floccesy Town",
+     "Route 19"
+    ],
+    [
+     "Floccesy Town",
+     "Route 20"
+    ],
+    [
+     "Giant Chasm",
+     "Route 13"
+    ],
+    [
+     "Giant Chasm",
+     "Route 22"
+    ],
+    [
+     "Glacier Room",
+     "Twist Mountain"
+    ],
+    [
+     "Glacier Room",
+     "Underground Ruins"
+    ],
+    [
+     "Guidance Chamber",
+     "Mistralton Cave"
+    ],
+    [
+     "Humilau City",
+     "Marine Tube"
+    ],
+    [
+     "Humilau City",
+     "Route 21"
+    ],
+    [
+     "Humilau City",
+     "Route 22"
+    ],
+    [
+     "Icirrus City",
+     "Route 8"
+    ],
+    [
+     "Icirrus City",
+     "Twist Mountain"
+    ],
+    [
+     "Iron Room",
+     "Underground Ruins"
+    ],
+    [
+     "Lacunosa Town",
+     "Route 12"
+    ],
+    [
+     "Lacunosa Town",
+     "Route 13"
+    ],
+    [
+     "Lentimas Town",
+     "Reversal Mountain"
+    ],
+    [
+     "Lostlorn Forest",
+     "Route 16"
+    ],
+    [
+     "Marine Tube",
+     "Undella Town"
+    ],
+    [
+     "Marvelous Bridge",
+     "Route 15"
+    ],
+    [
+     "Marvelous Bridge",
+     "Route 16"
+    ],
+    [
+     "Mistralton Cave",
+     "Route 6"
+    ],
+    [
+     "Mistralton City",
+     "Nature Sanctuary (by plane)"
+    ],
+    [
+     "Mistralton City",
+     "Route 7"
+    ],
+    [
+     "Moor of Icirrus",
+     "Route 8"
+    ],
+    [
+     "Nacrene City",
+     "Pinwheel Forest"
+    ],
+    [
+     "Nacrene City",
+     "Route 3"
+    ],
+    [
+     "Nimbasa City",
+     "Route 16"
+    ],
+    [
+     "Nimbasa City",
+     "Route 4"
+    ],
+    [
+     "Nimbasa City",
+     "Route 5"
+    ],
+    [
+     "Nuvema Town",
+     "Route 1"
+    ],
+    [
+     "Opelucid City",
+     "Route 11"
+    ],
+    [
+     "Opelucid City",
+     "Route 9"
+    ],
+    [
+     "P2 Laboratory",
+     "Route 17"
+    ],
+    [
+     "P2 Laboratory",
+     "Route 18"
+    ],
+    [
+     "Pinwheel Forest",
+     "Skyarrow Bridge"
+    ],
+    [
+     "Pokémon League",
+     "Victory Road"
+    ],
+    [
+     "Relic Castle",
+     "Relic Passage"
+    ],
+    [
+     "Reversal Mountain",
+     "Strange House"
+    ],
+    [
+     "Reversal Mountain",
+     "Undella Town"
+    ],
+    [
+     "Rocky Mountain Room",
+     "Underground Ruins"
+    ],
+    [
+     "Route 1",
+     "Route 17"
+    ],
+    [
+     "Route 11",
+     "Village Bridge"
+    ],
+    [
+     "Route 12",
+     "Village Bridge"
+    ],
+    [
+     "Route 13",
+     "Undella Town"
+    ],
+    [
+     "Route 14",
+     "Undella Town"
+    ],
+    [
+     "Route 17",
+     "Route 18"
+    ],
+    [
+     "Route 2",
+     "Striaton City"
+    ],
+    [
+     "Route 20",
+     "Virbank City"
+    ],
+    [
+     "Route 21",
+     "Seaside Cave"
+    ],
+    [
+     "Route 22",
+     "Route 23"
+    ],
+    [
+     "Route 23",
+     "Victory Road"
+    ],
+    [
+     "Route 3",
+     "Striaton City"
+    ],
+    [
+     "Route 3",
+     "Wellspring Cave"
+    ],
+    [
+     "Route 7",
+     "Twist Mountain"
+    ],
+    [
+     "Route 8",
+     "Tubeline Bridge"
+    ],
+    [
+     "Route 9",
+     "Tubeline Bridge"
+    ],
+    [
+     "Seaside Cave",
+     "Undella Bay"
+    ],
+    [
+     "Undella Bay",
+     "Undella Town"
+    ],
+    [
+     "Virbank City",
+     "Virbank Complex"
+    ]
+   ],
+   "aliases": {
+    "Black City": "Black City / White Forest",
+    "White Forest": "Black City / White Forest",
+    "Victory Road 2": "Victory Road",
+    "Nature Sanctuary": "Nature Sanctuary (by plane)"
+   }
+  },
+  "kalos": {
+   "edges": [
+    [
+     "Ambrette Town",
+     "Route 8"
+    ],
+    [
+     "Ambrette Town",
+     "Route 9"
+    ],
+    [
+     "Anistar City",
+     "Route 17"
+    ],
+    [
+     "Anistar City",
+     "Route 18"
+    ],
+    [
+     "Aquacorde Town",
+     "Route 1"
+    ],
+    [
+     "Aquacorde Town",
+     "Route 2"
+    ],
+    [
+     "Azure Bay",
+     "Route 12"
+    ],
+    [
+     "Azure Bay",
+     "Sea Spirit's Den"
+    ],
+    [
+     "Camphrier Town",
+     "Route 5"
+    ],
+    [
+     "Camphrier Town",
+     "Route 6"
+    ],
+    [
+     "Camphrier Town",
+     "Route 7"
+    ],
+    [
+     "Connecting Cave",
+     "Cyllage City"
+    ],
+    [
+     "Connecting Cave",
+     "Route 7"
+    ],
+    [
+     "Connecting Cave",
+     "Route 8"
+    ],
+    [
+     "Coumarine City",
+     "Route 12"
+    ],
+    [
+     "Coumarine City",
+     "Route 13"
+    ],
+    [
+     "Couriway Town",
+     "Route 18"
+    ],
+    [
+     "Couriway Town",
+     "Route 19"
+    ],
+    [
+     "Cyllage City",
+     "Route 10"
+    ],
+    [
+     "Cyllage City",
+     "Route 8"
+    ],
+    [
+     "Dendemille Town",
+     "Frost Cavern"
+    ],
+    [
+     "Dendemille Town",
+     "Route 15"
+    ],
+    [
+     "Dendemille Town",
+     "Route 17"
+    ],
+    [
+     "Friend Safari",
+     "Kiloude City (by train)"
+    ],
+    [
+     "Geosenge Town",
+     "Route 10"
+    ],
+    [
+     "Geosenge Town",
+     "Route 11"
+    ],
+    [
+     "Glittering Cave",
+     "Route 9"
+    ],
+    [
+     "Kiloude City (by train)",
+     "Lumiose City"
+    ],
+    [
+     "Laverre City",
+     "Route 14"
+    ],
+    [
+     "Laverre City",
+     "Route 15"
+    ],
+    [
+     "Lost Hotel",
+     "Route 15"
+    ],
+    [
+     "Lost Hotel",
+     "Route 16"
+    ],
+    [
+     "Lumiose City",
+     "Route 13"
+    ],
+    [
+     "Lumiose City",
+     "Route 14"
+    ],
+    [
+     "Lumiose City",
+     "Route 16"
+    ],
+    [
+     "Lumiose City",
+     "Route 4"
+    ],
+    [
+     "Lumiose City",
+     "Route 5"
+    ],
+    [
+     "Lumiose City",
+     "Team Flare Secret HQ"
+    ],
+    [
+     "Parfum Palace",
+     "Route 6"
+    ],
+    [
+     "Pokémon League",
+     "Victory Road"
+    ],
+    [
+     "Pokémon Village",
+     "Route 20"
+    ],
+    [
+     "Pokémon Village",
+     "Unknown Dungeon"
+    ],
+    [
+     "Reflection Cave",
+     "Route 11"
+    ],
+    [
+     "Reflection Cave",
+     "Shalour City"
+    ],
+    [
+     "Route 1",
+     "Vaniville Town"
+    ],
+    [
+     "Route 12",
+     "Shalour City"
+    ],
+    [
+     "Route 15",
+     "Route 16"
+    ],
+    [
+     "Route 18",
+     "Terminus Cave"
+    ],
+    [
+     "Route 19",
+     "Snowbelle City"
+    ],
+    [
+     "Route 2",
+     "Santalune Forest"
+    ],
+    [
+     "Route 20",
+     "Snowbelle City"
+    ],
+    [
+     "Route 21",
+     "Snowbelle City"
+    ],
+    [
+     "Route 21",
+     "Victory Road"
+    ],
+    [
+     "Route 22",
+     "Santalune City"
+    ],
+    [
+     "Route 22",
+     "Victory Road"
+    ],
+    [
+     "Route 3",
+     "Santalune City"
+    ],
+    [
+     "Route 3",
+     "Santalune Forest"
+    ],
+    [
+     "Route 4",
+     "Santalune City"
+    ],
+    [
+     "Shalour City",
+     "Tower of Mastery"
+    ]
+   ],
+   "aliases": {
+    "Sea Spirit’s Den": "Sea Spirit's Den"
+   }
+  },
+  "alola": {
+   "edges": [
+    [
+     "Aether Paradise",
+     "Heahea City"
+    ],
+    [
+     "Akala Outskirts",
+     "Memorial Hill"
+    ],
+    [
+     "Akala Outskirts",
+     "Ruins of Life"
+    ],
+    [
+     "Altar of the Moone",
+     "Vast Poni Canyon"
+    ],
+    [
+     "Altar of the Sunne",
+     "Vast Poni Canyon"
+    ],
+    [
+     "Ancient Poni Path",
+     "Poni Breaker Coast"
+    ],
+    [
+     "Ancient Poni Path",
+     "Poni Grove"
+    ],
+    [
+     "Ancient Poni Path",
+     "Poni Wilds"
+    ],
+    [
+     "Ancient Poni Path",
+     "Vast Poni Canyon"
+    ],
+    [
+     "Battle Tree",
+     "Poni Gauntlet"
+    ],
+    [
+     "Big Wave Beach",
+     "Route 2"
+    ],
+    [
+     "Big Wave Beach",
+     "Sandy Cave"
+    ],
+    [
+     "Blush Mountain",
+     "Route 12"
+    ],
+    [
+     "Brooklet Hill",
+     "Route 5"
+    ],
+    [
+     "Diglett's Tunnel",
+     "Heahea City"
+    ],
+    [
+     "Diglett's Tunnel",
+     "Route 9"
+    ],
+    [
+     "Dividing Peak Tunnel",
+     "Route 7"
+    ],
+    [
+     "Dividing Peak Tunnel",
+     "Route 8"
+    ],
+    [
+     "Exeggutor Island",
+     "Seafolk Village"
+    ],
+    [
+     "Haina Desert",
+     "Route 13"
+    ],
+    [
+     "Haina Desert",
+     "Ruins of Abundance"
+    ],
+    [
+     "Hano Beach",
+     "Route 8"
+    ],
+    [
+     "Hau'oli Cemetery",
+     "Route 2"
+    ],
+    [
+     "Hau'oli City",
+     "Heahea City (ferry)"
+    ],
+    [
+     "Hau'oli City",
+     "Melemele Sea"
+    ],
+    [
+     "Hau'oli City",
+     "Route 1"
+    ],
+    [
+     "Hau'oli City",
+     "Route 2"
+    ],
+    [
+     "Heahea Beach",
+     "Heahea City"
+    ],
+    [
+     "Heahea City",
+     "Heahea City (ferry)"
+    ],
+    [
+     "Heahea City",
+     "Malie City (ferry)"
+    ],
+    [
+     "Heahea City",
+     "Route 4"
+    ],
+    [
+     "Heahea City",
+     "Route 6"
+    ],
+    [
+     "Iki Town",
+     "Mahalo Trail"
+    ],
+    [
+     "Iki Town",
+     "Route 1"
+    ],
+    [
+     "Kala'e Bay",
+     "Seaward Cave"
+    ],
+    [
+     "Konikoni City",
+     "Route 9"
+    ],
+    [
+     "Lush Jungle",
+     "Route 5"
+    ],
+    [
+     "Mahalo Trail",
+     "Ruins of Conflict"
+    ],
+    [
+     "Malie City",
+     "Malie City (ferry)"
+    ],
+    [
+     "Malie City",
+     "Malie Garden"
+    ],
+    [
+     "Malie City",
+     "Route 10"
+    ],
+    [
+     "Malie City",
+     "Route 11"
+    ],
+    [
+     "Malie City",
+     "Seafolk Village (ferry)"
+    ],
+    [
+     "Melemele Meadow",
+     "Route 3"
+    ],
+    [
+     "Melemele Meadow",
+     "Seaward Cave"
+    ],
+    [
+     "Melemele Sea",
+     "Route 1"
+    ],
+    [
+     "Melemele Sea",
+     "Ten Carat Hill"
+    ],
+    [
+     "Memorial Hill",
+     "Route 9"
+    ],
+    [
+     "Mount Hokulani",
+     "Route 10"
+    ],
+    [
+     "Mount Lanakila",
+     "Mount Lanakila Crater"
+    ],
+    [
+     "Mount Lanakila",
+     "Tapu Village"
+    ],
+    [
+     "Paniola Ranch",
+     "Route 6"
+    ],
+    [
+     "Paniola Town",
+     "Route 4"
+    ],
+    [
+     "Paniola Town",
+     "Route 5"
+    ],
+    [
+     "Paniola Town",
+     "Route 6"
+    ],
+    [
+     "Po Town",
+     "Route 17"
+    ],
+    [
+     "Po Town",
+     "Team Rocket's Castle"
+    ],
+    [
+     "Poni Breaker Coast",
+     "Ruins of Hope"
+    ],
+    [
+     "Poni Coast",
+     "Poni Gauntlet"
+    ],
+    [
+     "Poni Coast",
+     "Poni Plains"
+    ],
+    [
+     "Poni Grove",
+     "Poni Plains"
+    ],
+    [
+     "Poni Meadow",
+     "Poni Plains"
+    ],
+    [
+     "Poni Meadow",
+     "Resolution Cave"
+    ],
+    [
+     "Poni Wilds",
+     "Seafolk Village"
+    ],
+    [
+     "Route 1",
+     "Ten Carat Hill"
+    ],
+    [
+     "Route 1",
+     "Trainers' School"
+    ],
+    [
+     "Route 11",
+     "Route 12"
+    ],
+    [
+     "Route 12",
+     "Route 13"
+    ],
+    [
+     "Route 12",
+     "Secluded Shore"
+    ],
+    [
+     "Route 12",
+     "Ula'ula Beach"
+    ],
+    [
+     "Route 13",
+     "Tapu Village"
+    ],
+    [
+     "Route 14",
+     "Tapu Village"
+    ],
+    [
+     "Route 15",
+     "Route 16"
+    ],
+    [
+     "Route 15",
+     "Tapu Village"
+    ],
+    [
+     "Route 16",
+     "Ula'ula Meadow"
+    ],
+    [
+     "Route 17",
+     "Ula'ula Meadow"
+    ],
+    [
+     "Route 2",
+     "Verdant Cavern"
+    ],
+    [
+     "Route 3",
+     "Verdant Cavern"
+    ],
+    [
+     "Route 5",
+     "Route 8"
+    ],
+    [
+     "Route 6",
+     "Royal Avenue"
+    ],
+    [
+     "Route 7",
+     "Royal Avenue"
+    ],
+    [
+     "Route 7",
+     "Wela Volcano Park"
+    ],
+    [
+     "Seafolk Village",
+     "Seafolk Village (ferry)"
+    ],
+    [
+     "Ultra Megalopolis",
+     "Ultra Space Wilds"
+    ],
+    [
+     "Ultra Space",
+     "Ultra Space Wilds"
+    ],
+    [
+     "Ultra Space Wilds",
+     "Ultra Space Wilds Cave World"
+    ],
+    [
+     "Ultra Space Wilds",
+     "Ultra Space Wilds Cliff World"
+    ],
+    [
+     "Ultra Space Wilds",
+     "Ultra Space Wilds Rocky World"
+    ],
+    [
+     "Ultra Space Wilds",
+     "Ultra Space Wilds Water World"
+    ]
+   ],
+   "aliases": {
+    "Diglett’s Tunnel": "Diglett's Tunnel",
+    "Hau’oli Cemetery": "Hau'oli Cemetery",
+    "Kala’e Bay": "Kala'e Bay",
+    "Ula’ula Meadow": "Ula'ula Meadow",
+    "Trainers’ School": "Trainers' School"
+   }
+  },
+  "galar": {
+   "edges": [
+    [
+     "Axew's Eye",
+     "East Lake Axewell"
+    ],
+    [
+     "Ballimere Lake",
+     "Dyna Tree Hill"
+    ],
+    [
+     "Ballimere Lake",
+     "Giant's Bed"
+    ],
+    [
+     "Ballimere Lake",
+     "Lakeside Cave"
+    ],
+    [
+     "Ballonlea",
+     "Glimwood Tangle"
+    ],
+    [
+     "Battle Tower",
+     "Wyndon"
+    ],
+    [
+     "Brawlers' Cave",
+     "Challenge Road"
+    ],
+    [
+     "Brawlers' Cave",
+     "Soothing Wetlands"
+    ],
+    [
+     "Brawlers' Cave",
+     "Training Lowlands"
+    ],
+    [
+     "Brawlers' Cave",
+     "Workout Sea"
+    ],
+    [
+     "Bridge Field",
+     "Dusty Bowl"
+    ],
+    [
+     "Bridge Field",
+     "Motostoke Outskirts"
+    ],
+    [
+     "Bridge Field",
+     "Motostoke Riverbank"
+    ],
+    [
+     "Bridge Field",
+     "Stony Wilderness"
+    ],
+    [
+     "Challenge Beach",
+     "Courageous Cavern"
+    ],
+    [
+     "Challenge Beach",
+     "Forest of Focus"
+    ],
+    [
+     "Challenge Beach",
+     "Honeycalm Sea"
+    ],
+    [
+     "Challenge Beach",
+     "Soothing Wetlands"
+    ],
+    [
+     "Challenge Beach",
+     "Stepping-Stone Sea"
+    ],
+    [
+     "Challenge Road",
+     "Training Lowlands"
+    ],
+    [
+     "Circhester",
+     "Route 8"
+    ],
+    [
+     "Circhester",
+     "Route 9"
+    ],
+    [
+     "Courageous Cavern",
+     "Fields of Honor"
+    ],
+    [
+     "Courageous Cavern",
+     "Loop Lagoon"
+    ],
+    [
+     "Crown Shrine",
+     "Path to the Peak"
+    ],
+    [
+     "Dappled Grove",
+     "Rolling Fields"
+    ],
+    [
+     "Dappled Grove",
+     "Watchtower Ruins"
+    ],
+    [
+     "Dusty Bowl",
+     "Giant's Cap"
+    ],
+    [
+     "Dusty Bowl",
+     "Giant's Mirror"
+    ],
+    [
+     "Dusty Bowl",
+     "Hammerlocke Hills"
+    ],
+    [
+     "Dusty Bowl",
+     "Stony Wilderness"
+    ],
+    [
+     "East Lake Axewell",
+     "Giant's Seat"
+    ],
+    [
+     "East Lake Axewell",
+     "Motostoke"
+    ],
+    [
+     "East Lake Axewell",
+     "Rolling Fields"
+    ],
+    [
+     "East Lake Axewell",
+     "West Lake Axewell"
+    ],
+    [
+     "Energy Plant Tower Summit",
+     "Hammerlocke"
+    ],
+    [
+     "Fields of Honor",
+     "Fields of Honor (train)"
+    ],
+    [
+     "Fields of Honor",
+     "Loop Lagoon"
+    ],
+    [
+     "Fields of Honor",
+     "Master Dojo"
+    ],
+    [
+     "Fields of Honor",
+     "Soothing Wetlands"
+    ],
+    [
+     "Fields of Honor",
+     "Workout Sea"
+    ],
+    [
+     "Fields of Honor (train)",
+     "Wedgehurst"
+    ],
+    [
+     "Forest of Focus",
+     "Soothing Wetlands"
+    ],
+    [
+     "Forest of Focus",
+     "Training Lowlands"
+    ],
+    [
+     "Freezington",
+     "Freezington (train)"
+    ],
+    [
+     "Freezington",
+     "Frostpoint Field"
+    ],
+    [
+     "Freezington",
+     "Slippery Slope"
+    ],
+    [
+     "Freezington (train)",
+     "Wedgehurst"
+    ],
+    [
+     "Frigid Sea",
+     "Roaring-Sea Caves"
+    ],
+    [
+     "Frigid Sea",
+     "Three-Point Pass"
+    ],
+    [
+     "Frostpoint Field",
+     "Giant's Bed"
+    ],
+    [
+     "Galar Mine",
+     "Route 3"
+    ],
+    [
+     "Galar Mine",
+     "Route 4"
+    ],
+    [
+     "Galar Mine No. 2",
+     "Hulbury"
+    ],
+    [
+     "Galar Mine No. 2",
+     "Motostoke Outskirts"
+    ],
+    [
+     "Giant's Bed",
+     "Giant's Foot"
+    ],
+    [
+     "Giant's Bed",
+     "Iron Ruins"
+    ],
+    [
+     "Giant's Bed",
+     "Old Cemetery"
+    ],
+    [
+     "Giant's Bed",
+     "Rock Peak Ruins"
+    ],
+    [
+     "Giant's Bed",
+     "Snowslide Slope"
+    ],
+    [
+     "Giant's Cap",
+     "Lake of Outrage"
+    ],
+    [
+     "Giant's Cap",
+     "Stony Wilderness"
+    ],
+    [
+     "Giant's Foot",
+     "Roaring-Sea Caves"
+    ],
+    [
+     "Giant's Mirror",
+     "Hammerlocke Hills"
+    ],
+    [
+     "Giant's Seat",
+     "Motostoke"
+    ],
+    [
+     "Giant's Seat",
+     "North Lake Miloch"
+    ],
+    [
+     "Giant's Seat",
+     "South Lake Miloch"
+    ],
+    [
+     "Glimwood Tangle",
+     "Stow-on-Side"
+    ],
+    [
+     "Hammerlocke",
+     "Hammerlocke Hills"
+    ],
+    [
+     "Hammerlocke",
+     "Route 10"
+    ],
+    [
+     "Hammerlocke",
+     "Route 6"
+    ],
+    [
+     "Hammerlocke",
+     "Route 7"
+    ],
+    [
+     "Honeycalm Island",
+     "Honeycalm Sea"
+    ],
+    [
+     "Honeycalm Sea",
+     "Insular Sea"
+    ],
+    [
+     "Honeycalm Sea",
+     "Stepping-Stone Sea"
+    ],
+    [
+     "Honeycalm Sea",
+     "Training Lowlands"
+    ],
+    [
+     "Hulbury",
+     "Route 5"
+    ],
+    [
+     "Iceberg Ruins",
+     "Snowslide Slope"
+    ],
+    [
+     "Insular Sea",
+     "Stepping-Stone Sea"
+    ],
+    [
+     "Loop Lagoon",
+     "Stepping-Stone Sea"
+    ],
+    [
+     "Max Lair",
+     "Slippery Slope"
+    ],
+    [
+     "Meetup Spot",
+     "Rolling Fields"
+    ],
+    [
+     "Meetup Spot",
+     "Wedgehurst"
+    ],
+    [
+     "Motostoke",
+     "Motostoke Outskirts"
+    ],
+    [
+     "Motostoke",
+     "Route 3"
+    ],
+    [
+     "Motostoke",
+     "West Lake Axewell"
+    ],
+    [
+     "Motostoke Outskirts",
+     "Motostoke Riverbank"
+    ],
+    [
+     "North Lake Miloch",
+     "South Lake Miloch"
+    ],
+    [
+     "Path to the Peak",
+     "Tunnel to the Top"
+    ],
+    [
+     "Postwick",
+     "Route 1"
+    ],
+    [
+     "Postwick",
+     "Slumbering Weald"
+    ],
+    [
+     "Potbottom Desert",
+     "Warm-Up Tunnel"
+    ],
+    [
+     "Roaring-Sea Caves",
+     "Three-Point Pass"
+    ],
+    [
+     "Rolling Fields",
+     "South Lake Miloch"
+    ],
+    [
+     "Rolling Fields",
+     "West Lake Axewell"
+    ],
+    [
+     "Route 1",
+     "Wedgehurst"
+    ],
+    [
+     "Route 10",
+     "Wyndon"
+    ],
+    [
+     "Route 2",
+     "Wedgehurst"
+    ],
+    [
+     "Route 4",
+     "Turffield"
+    ],
+    [
+     "Route 5",
+     "Turffield"
+    ],
+    [
+     "Route 6",
+     "Stow-on-Side"
+    ],
+    [
+     "Route 7",
+     "Route 8"
+    ],
+    [
+     "Route 9",
+     "Spikemuth"
+    ],
+    [
+     "Snowslide Slope",
+     "Tunnel to the Top"
+    ],
+    [
+     "Split-Decision Ruins",
+     "Three-Point Pass"
+    ],
+    [
+     "Stepping-Stone Sea",
+     "Workout Sea"
+    ],
+    [
+     "Training Lowlands",
+     "Warm-Up Tunnel"
+    ],
+    [
+     "Watchtower Ruins",
+     "West Lake Axewell"
+    ]
+   ],
+   "aliases": {}
+  },
+  "hisui": {
+   "edges": [
+    [
+     "Acuity Cavern",
+     "Alabaster Icelands"
+    ],
+    [
+     "Alabaster Icelands",
+     "Arena's Approach"
+    ],
+    [
+     "Alabaster Icelands",
+     "Avalugg's Legacy"
+    ],
+    [
+     "Alabaster Icelands",
+     "Bonechill Wastes"
+    ],
+    [
+     "Alabaster Icelands",
+     "Heart's Crag"
+    ],
+    [
+     "Alabaster Icelands",
+     "Ice Column Chamber"
+    ],
+    [
+     "Alabaster Icelands",
+     "Icebound Falls"
+    ],
+    [
+     "Alabaster Icelands",
+     "Icepeak Arena"
+    ],
+    [
+     "Alabaster Icelands",
+     "Jubilife Village"
+    ],
+    [
+     "Alabaster Icelands",
+     "Snowfall Hot Spring"
+    ],
+    [
+     "Alabaster Icelands",
+     "Snowpoint Temple"
+    ],
+    [
+     "Alabaster Icelands",
+     "Whiteout Valley"
+    ],
+    [
+     "Ancient Quarry",
+     "Coronet Highlands"
+    ],
+    [
+     "Bolderoll Slope",
+     "Crimson Mirelands"
+    ],
+    [
+     "Celestica Ruins",
+     "Coronet Highlands"
+    ],
+    [
+     "Cobalt Coastlands",
+     "Deadwood Haunt"
+    ],
+    [
+     "Cobalt Coastlands",
+     "Firespit Island"
+    ],
+    [
+     "Cobalt Coastlands",
+     "Jubilife Village"
+    ],
+    [
+     "Cobalt Coastlands",
+     "Lunker's Lair"
+    ],
+    [
+     "Cobalt Coastlands",
+     "Sand's Reach"
+    ],
+    [
+     "Cobalt Coastlands",
+     "Seaside Hollow"
+    ],
+    [
+     "Cobalt Coastlands",
+     "Spring Path"
+    ],
+    [
+     "Coronet Highlands",
+     "Fabled Spring"
+    ],
+    [
+     "Coronet Highlands",
+     "Jubilife Village"
+    ],
+    [
+     "Coronet Highlands",
+     "Lonely Spring"
+    ],
+    [
+     "Coronet Highlands",
+     "Moonview Arena"
+    ],
+    [
+     "Coronet Highlands",
+     "Temple of Sinnoh"
+    ],
+    [
+     "Coronet Highlands",
+     "Wayward Cave"
+    ],
+    [
+     "Crimson Mirelands",
+     "Diamond Settlement"
+    ],
+    [
+     "Crimson Mirelands",
+     "Gapejaw Bog"
+    ],
+    [
+     "Crimson Mirelands",
+     "Jubilife Village"
+    ],
+    [
+     "Crimson Mirelands",
+     "Scarlet Bog"
+    ],
+    [
+     "Crimson Mirelands",
+     "Shrouded Ruins"
+    ],
+    [
+     "Crimson Mirelands",
+     "Sludge Mound"
+    ],
+    [
+     "Crimson Mirelands",
+     "Valor Cavern"
+    ],
+    [
+     "Firespit Island",
+     "Lava Dome Sanctum"
+    ],
+    [
+     "Floaro Gardens",
+     "Obsidian Fieldlands"
+    ],
+    [
+     "Grandtree Arena",
+     "Obsidian Fieldlands"
+    ],
+    [
+     "Grueling Grove",
+     "Obsidian Fieldlands"
+    ],
+    [
+     "Horseshoe Plains",
+     "Obsidian Fieldlands"
+    ],
+    [
+     "Jubilife Village",
+     "Obsidian Fieldlands"
+    ],
+    [
+     "Lake Verity",
+     "Obsidian Fieldlands"
+    ],
+    [
+     "Nature's Pantry",
+     "Obsidian Fieldlands"
+    ],
+    [
+     "Obsidian Falls",
+     "Obsidian Fieldlands"
+    ],
+    [
+     "Obsidian Fieldlands",
+     "Ramanas Island"
+    ],
+    [
+     "Obsidian Fieldlands",
+     "Tidewater Dam"
+    ],
+    [
+     "Obsidian Fieldlands",
+     "Verity Cavern"
+    ],
+    [
+     "Spring Path",
+     "Turnback Cave"
+    ]
+   ],
+   "aliases": {}
+  },
+  "paldea": {
+   "edges": [
+    [
+     "Alfornada",
+     "South Province (Area Six)"
+    ],
+    [
+     "Alfornada Cavern",
+     "South Province (Area Six)"
+    ],
+    [
+     "Apple Hills",
+     "Kitakami Road"
+    ],
+    [
+     "Apple Hills",
+     "Kitakami Wilds"
+    ],
+    [
+     "Area Zero",
+     "Area Zero Underdepths"
+    ],
+    [
+     "Area Zero",
+     "Great Crater of Paldea"
+    ],
+    [
+     "Artazon",
+     "East Province (Area One)"
+    ],
+    [
+     "Artazon",
+     "South Province (Area Five)"
+    ],
+    [
+     "Artazon",
+     "South Province (Area Three)"
+    ],
+    [
+     "Asado Desert",
+     "Cascarrafa"
+    ],
+    [
+     "Asado Desert",
+     "West Province (Area One)"
+    ],
+    [
+     "Cabo Poco",
+     "Poco Path"
+    ],
+    [
+     "Cabo Poco",
+     "South Province (Area One)"
+    ],
+    [
+     "Canyon Biome",
+     "Canyon Plaza"
+    ],
+    [
+     "Canyon Biome",
+     "Central Plaza"
+    ],
+    [
+     "Canyon Biome",
+     "Chargestone Cavern"
+    ],
+    [
+     "Caph Squad's Base",
+     "North Province (Area Two)"
+    ],
+    [
+     "Cascarrafa",
+     "West Province (Area Two)"
+    ],
+    [
+     "Casseroya Lake",
+     "Glaseado Mountain"
+    ],
+    [
+     "Casseroya Lake",
+     "North Paldean Sea"
+    ],
+    [
+     "Casseroya Lake",
+     "North Province (Area Three)"
+    ],
+    [
+     "Casseroya Lake",
+     "Socarrat Trail"
+    ],
+    [
+     "Casseroya Lake",
+     "West Province (Area Three)"
+    ],
+    [
+     "Casseroya Lake",
+     "West Province (Area Two)"
+    ],
+    [
+     "Central Plaza",
+     "Coastal Biome"
+    ],
+    [
+     "Central Plaza",
+     "Polar Biome"
+    ],
+    [
+     "Central Plaza",
+     "Savanna Biome"
+    ],
+    [
+     "Central Plaza",
+     "Terarium"
+    ],
+    [
+     "Chargestone Cavern",
+     "Polar Biome"
+    ],
+    [
+     "Chilling Waterhead",
+     "Oni Mountain"
+    ],
+    [
+     "Coastal Biome",
+     "Coastal Plaza"
+    ],
+    [
+     "Coastal Biome",
+     "Torchlit Labyrinth"
+    ],
+    [
+     "Cortondo",
+     "South Province (Area Two)"
+    ],
+    [
+     "Crystal Pool",
+     "Oni Mountain"
+    ],
+    [
+     "Dalizapa Passage",
+     "East Province (Area Three)"
+    ],
+    [
+     "Dalizapa Passage",
+     "Glaseado Mountain"
+    ],
+    [
+     "Dreaded Den",
+     "Oni Mountain"
+    ],
+    [
+     "East Paldean Sea",
+     "East Province (Area Three)"
+    ],
+    [
+     "East Paldean Sea",
+     "East Province (Area Two)"
+    ],
+    [
+     "East Province (Area One)",
+     "East Province (Area Three)"
+    ],
+    [
+     "East Province (Area One)",
+     "East Province (Area Two)"
+    ],
+    [
+     "East Province (Area One)",
+     "Levincia"
+    ],
+    [
+     "East Province (Area One)",
+     "Schedar Squad's Base"
+    ],
+    [
+     "East Province (Area One)",
+     "South Province (Area Three)"
+    ],
+    [
+     "East Province (Area Three)",
+     "East Province (Area Two)"
+    ],
+    [
+     "East Province (Area Three)",
+     "North Province (Area One)"
+    ],
+    [
+     "East Province (Area Three)",
+     "North Province (Area Two)"
+    ],
+    [
+     "East Province (Area Three)",
+     "Tagtree Thicket"
+    ],
+    [
+     "East Province (Area Three)",
+     "Zapapico"
+    ],
+    [
+     "East Province (Area Two)",
+     "Levincia"
+    ],
+    [
+     "Fellhorn Gorge",
+     "Mossfell Confluence"
+    ],
+    [
+     "Fellhorn Gorge",
+     "Oni Mountain"
+    ],
+    [
+     "Glaseado Mountain",
+     "Montenevera"
+    ],
+    [
+     "Glaseado Mountain",
+     "North Province (Area One)"
+    ],
+    [
+     "Glaseado Mountain",
+     "North Province (Area Three)"
+    ],
+    [
+     "Infernal Pass",
+     "Oni Mountain"
+    ],
+    [
+     "Inlet Grotto",
+     "Poco Path"
+    ],
+    [
+     "Kitakami Hall",
+     "Loyalty Plaza"
+    ],
+    [
+     "Kitakami Hall",
+     "Reveler's Road"
+    ],
+    [
+     "Kitakami Road",
+     "Mossfell Confluence"
+    ],
+    [
+     "Kitakami Road",
+     "Mossui Town"
+    ],
+    [
+     "Kitakami Wilds",
+     "Mossui Town"
+    ],
+    [
+     "Kitakami Wilds",
+     "Paradise Barrens"
+    ],
+    [
+     "Kitakami Wilds",
+     "Timeless Woods"
+    ],
+    [
+     "Kitakami Wilds",
+     "Wistful Fields"
+    ],
+    [
+     "Los Platos",
+     "South Province (Area One)"
+    ],
+    [
+     "Loyalty Plaza",
+     "Reveler's Road"
+    ],
+    [
+     "Medali",
+     "West Province (Area Three)"
+    ],
+    [
+     "Mesagoza",
+     "Naranja Academy"
+    ],
+    [
+     "Mesagoza",
+     "South Province (Area One)"
+    ],
+    [
+     "Mesagoza",
+     "South Province (Area Three)"
+    ],
+    [
+     "Mesagoza",
+     "South Province (Area Two)"
+    ],
+    [
+     "Mesagoza",
+     "Uva Academy"
+    ],
+    [
+     "Mossui Town",
+     "Oni Mountain"
+    ],
+    [
+     "Mossui Town",
+     "Reveler's Road"
+    ],
+    [
+     "Navi Squad's Base",
+     "Tagtree Thicket"
+    ],
+    [
+     "North Paldean Sea",
+     "North Province (Area One)"
+    ],
+    [
+     "North Province (Area One)",
+     "North Province (Area Two)"
+    ],
+    [
+     "North Province (Area One)",
+     "Tagtree Thicket"
+    ],
+    [
+     "North Province (Area Three)",
+     "Ruchbah Squad's Base"
+    ],
+    [
+     "Oni Mountain",
+     "Oni's Maw"
+    ],
+    [
+     "Poco Path",
+     "South Paldean Sea"
+    ],
+    [
+     "Poco Path",
+     "South Province (Area Four)"
+    ],
+    [
+     "Poco Path",
+     "South Province (Area One)"
+    ],
+    [
+     "Pokémon League",
+     "South Province (Area Two)"
+    ],
+    [
+     "Polar Biome",
+     "Polar Plaza"
+    ],
+    [
+     "Porto Marinada",
+     "West Province (Area Two)"
+    ],
+    [
+     "Savanna Biome",
+     "Savanna Plaza"
+    ],
+    [
+     "Segin Squad's Base",
+     "West Province (Area One)"
+    ],
+    [
+     "South Paldean Sea",
+     "South Province (Area Four)"
+    ],
+    [
+     "South Paldean Sea",
+     "South Province (Area Six)"
+    ],
+    [
+     "South Province (Area Five)",
+     "South Province (Area One)"
+    ],
+    [
+     "South Province (Area Five)",
+     "South Province (Area Three)"
+    ],
+    [
+     "South Province (Area Four)",
+     "South Province (Area One)"
+    ],
+    [
+     "South Province (Area Four)",
+     "South Province (Area Six)"
+    ],
+    [
+     "South Province (Area Four)",
+     "South Province (Area Two)"
+    ],
+    [
+     "South Province (Area Four)",
+     "West Province (Area One)"
+    ],
+    [
+     "South Province (Area Six)",
+     "South Province (Area Two)"
+    ],
+    [
+     "South Province (Area Six)",
+     "West Province (Area One)"
+    ],
+    [
+     "South Province (Area Two)",
+     "West Province (Area One)"
+    ],
+    [
+     "West Paldean Sea",
+     "West Province (Area One)"
+    ],
+    [
+     "West Province (Area One)",
+     "West Province (Area Three)"
+    ],
+    [
+     "West Province (Area Three)",
+     "West Province (Area Two)"
+    ]
+   ],
+   "aliases": {}
+  },
+  "lumiose": {
+   "edges": [
+    [
+     "Autumnal Avenue",
+     "Centrico Plaza"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Plaza"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Sector 1"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Sector 2"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Sector 3"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Sector 4"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Sector 5"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Sector 6"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Sector 7"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Sector 8"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Sector 9"
+    ],
+    [
+     "Bleu District (sectors)",
+     "Bleu Street"
+    ],
+    [
+     "Bleu Plaza",
+     "Centrico Plaza"
+    ],
+    [
+     "Centrico Plaza",
+     "Estival Avenue"
+    ],
+    [
+     "Centrico Plaza",
+     "Hibernal Avenue"
+    ],
+    [
+     "Centrico Plaza",
+     "Jaune Plaza"
+    ],
+    [
+     "Centrico Plaza",
+     "Lumiose City"
+    ],
+    [
+     "Centrico Plaza",
+     "Magenta Plaza"
+    ],
+    [
+     "Centrico Plaza",
+     "North Boulevard"
+    ],
+    [
+     "Centrico Plaza",
+     "Rouge Plaza"
+    ],
+    [
+     "Centrico Plaza",
+     "Saison Canal"
+    ],
+    [
+     "Centrico Plaza",
+     "South Boulevard"
+    ],
+    [
+     "Centrico Plaza",
+     "Vernal Avenue"
+    ],
+    [
+     "Centrico Plaza",
+     "Vert Plaza"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Plaza"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 1"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 10"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 11"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 12"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 2"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 3"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 4"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 5"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 6"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 7"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 8"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Sector 9"
+    ],
+    [
+     "Jaune District (sectors)",
+     "Jaune Street"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Plaza"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Sector 1"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Sector 2"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Sector 3"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Sector 4"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Sector 5"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Sector 6"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Sector 7"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Sector 8"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Sector 9"
+    ],
+    [
+     "Magenta District (sectors)",
+     "Magenta Street"
+    ],
+    [
+     "Rouge District (sectors)",
+     "Rouge Plaza"
+    ],
+    [
+     "Rouge District (sectors)",
+     "Rouge Sector 1"
+    ],
+    [
+     "Rouge District (sectors)",
+     "Rouge Sector 2"
+    ],
+    [
+     "Rouge District (sectors)",
+     "Rouge Sector 3"
+    ],
+    [
+     "Rouge District (sectors)",
+     "Rouge Sector 4"
+    ],
+    [
+     "Rouge District (sectors)",
+     "Rouge Sector 5"
+    ],
+    [
+     "Rouge District (sectors)",
+     "Rouge Sector 6"
+    ],
+    [
+     "Rouge District (sectors)",
+     "Rouge Sector 7"
+    ],
+    [
+     "Rouge District (sectors)",
+     "Rouge Sector 8"
+    ],
+    [
+     "Rouge District (sectors)",
+     "Rouge Street"
+    ],
+    [
+     "Saison Canal",
+     "Saison Canalside"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Plaza"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Sector 1"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Sector 2"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Sector 3"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Sector 4"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Sector 5"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Sector 6"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Sector 7"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Sector 8"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Sector 9"
+    ],
+    [
+     "Vert District (sectors)",
+     "Vert Street"
+    ]
+   ],
+   "aliases": {
+    "Vert District": "Vert District (sectors)",
+    "Bleu District": "Bleu District (sectors)",
+    "Magenta District": "Magenta District (sectors)",
+    "Rouge District": "Rouge District (sectors)",
+    "Jaune District": "Jaune District (sectors)"
+   }
   }
  },
  "games": {
@@ -769,9 +3360,33 @@
   "pearl": "sinnoh",
   "platinum": "sinnoh",
   "brilliantdiamond": "sinnoh",
-  "shiningpearl": "sinnoh"
+  "shiningpearl": "sinnoh",
+  "black": "unova_bw",
+  "white": "unova_bw",
+  "black2": "unova_b2w2",
+  "white2": "unova_b2w2",
+  "x": "kalos",
+  "y": "kalos",
+  "sun": "alola",
+  "moon": "alola",
+  "ultrasun": "alola",
+  "ultramoon": "alola",
+  "sword": "galar",
+  "shield": "galar",
+  "legendsarceus": "hisui",
+  "scarlet": "paldea",
+  "violet": "paldea",
+  "legendsza": "lumiose"
  },
  "sources": {
-  "sinnoh": "Hand-built; cave and building links checked against Platinum's map data (pret/pokeplatinum)"
+  "sinnoh": "Hand-built; cave and building links checked against Platinum's map data (pret/pokeplatinum).",
+  "unova_bw": "Hand-built from Bulbapedia and Serebii location pages.",
+  "unova_b2w2": "Hand-built from Bulbapedia and Serebii location pages.",
+  "kalos": "Hand-built from Bulbapedia and Serebii location pages.",
+  "alola": "Hand-built from Bulbapedia and Serebii location pages. Islands are linked by their ferry ports.",
+  "galar": "Hand-built from Bulbapedia and Serebii location pages. Wild Area zones link to the zones they border; the DLC islands link to Wedgehurst by train.",
+  "hisui": "Hand-built from Bulbapedia and Serebii location pages. Each spot links to its area, and every area links to Jubilife Village.",
+  "paldea": "Hand-built from Bulbapedia and Serebii location pages. Provinces link to the areas they border. Kitakami’s open fields are grouped around Kitakami Wilds.",
+  "lumiose": "Hand-built from Bulbapedia and Serebii location pages. Sectors are grouped by district; Wild Zones and buildings aren’t placed yet."
  }
 }
