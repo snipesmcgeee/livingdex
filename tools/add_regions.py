@@ -314,7 +314,7 @@ Polar Biome: Polar Plaza; Chargestone Cavern
 ZA = ['Centrico Plaza: Lumiose City; North Boulevard; South Boulevard; Vernal Avenue; Estival Avenue; Autumnal Avenue; Hibernal Avenue; Saison Canal']
 ZA.append('Saison Canal: Saison Canalside')
 for c, n in [('Vert', 9), ('Bleu', 9), ('Magenta', 9), ('Rouge', 8), ('Jaune', 12)]:
-    hub = f'{c} District (sectors)'
+    hub = f'{c} sectors'
     ZA.append(f'{hub}: ' + '; '.join([f'{c} Sector {i}' for i in range(1, n + 1)] + [f'{c} Street', f'{c} Plaza']))
     ZA.append(f'{c} Plaza: Centrico Plaza')
 ZA = '\n'.join(ZA)
@@ -330,7 +330,7 @@ new = {
     'galar': (GALAR, {}, ['sword', 'shield'], src + '. Wild Area zones link to the zones they border; the DLC islands link to Wedgehurst by train.'),
     'hisui': (HISUI, {}, ['legendsarceus'], src + '. Each spot links to its area, and every area links to Jubilife Village.'),
     'paldea': (PALDEA, {}, ['scarlet', 'violet'], src + '. Provinces link to the areas they border. Kitakami’s open fields are grouped around Kitakami Wilds.'),
-    'lumiose': (ZA, {f'{c} District': f'{c} District (sectors)' for c in ['Vert', 'Bleu', 'Magenta', 'Rouge', 'Jaune']}, ['legendsza'],
+    'lumiose': (ZA, {}, ['legendsza'],
                 src + '. Sectors are grouped by district; Wild Zones and buildings aren’t placed yet.'),
 }
 for gid, (text, aliases, games, note) in new.items():

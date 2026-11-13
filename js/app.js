@@ -641,7 +641,16 @@ function routeNeighbors(game, area, byName) {
     }
     frontier = next;
   }
-  return [...out.entries()].map(([nm, via]) => ({ area: byName.get(nm), via })).filter(x => x.area);
+  // Group spots of one place ("Frost Cavern (B1F)", "… (Max Den A)") into one chip that opens the spot with most missing.
+  const groups = new Map();
+  for (const [nm, via] of out) {
+    const a = byName.get(nm); if (!a) continue;
+    const base = /\(Area [A-Z][a-z]+\)/.test(nm) ? nm : nm.replace(/\s*\(.*$/, '');  // keep Paldea's "(Area Two)" apart
+    const g = groups.get(base);
+    if (!g) groups.set(base, { area: a, via, count: 1, base });
+    else { g.count++; if (a.missing > g.area.missing) g.area = a; if (!via) g.via = null; }
+  }
+  return [...groups.values()].map(g => ({ area: g.area, via: g.via, label: g.count > 1 ? `${g.base} (${g.count} spots)` : g.area.name }));
 }
 function renderRoutes() {
   const v = $('routesView');
@@ -677,7 +686,7 @@ function renderRoutes() {
     if (nb === null) nearby = '<p class="muted small">Connected areas aren’t mapped for this game yet. Use ‹ › to step through areas.</p>';
     else if (nb === undefined) nearby = '<p class="muted small">This spot isn’t placed on the map yet. Use ‹ › to step through areas.</p>';
     else if (nb.length) nearby = `<div class="nearby"><span class="muted small">Nearby:</span>${nb.sort((a, b) => b.area.missing - a.area.missing || a.area.name.localeCompare(b.area.name, undefined, { numeric: true }))
-      .map(x => `<button class="chip${x.area.missing ? ' hot' : ''}" data-area="${esc(x.area.name)}">${esc(x.area.name)}${x.area.missing ? ` <b>${x.area.missing}</b>` : ' ✓'}${x.via ? `<span class="muted"> via ${esc(x.via)}</span>` : ''}</button>`).join('')}</div>`;
+      .map(x => `<button class="chip${x.area.missing ? ' hot' : ''}" data-area="${esc(x.area.name)}">${esc(x.label)}${x.area.missing ? ` <b>${x.area.missing}</b>` : ' ✓'}${x.via ? `<span class="muted"> via ${esc(x.via)}</span>` : ''}</button>`).join('')}</div>`;
   }
   const src = CONN && CONN.games[routeGame];
   const note = src ? (src.source === 'exact' ? (src.remake ? 'Connections come from the original game’s map data; the remake’s layout is the same apart from the extra areas added by hand.' : 'Connections come from the game’s own map data.') : (src.note || 'Connections were built by hand.') + ' Tell me if one looks wrong.') : '';
