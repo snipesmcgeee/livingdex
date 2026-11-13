@@ -1,5 +1,5 @@
 import * as store from './storage.js';
-import { createFinder, methodLabel, NO_DATA, PARTIAL_DATA, VC_ONLY } from './find.js';
+import { createFinder, methodLabel, NO_DATA, PARTIAL_DATA, VC_ONLY, GAME_VERSIONS } from './find.js';
 
 // ---------- reference data ----------
 const GAMES = [
@@ -47,7 +47,7 @@ let sortKey = 'home', sortAsc = true;
 let filters = {};
 let layoutCache = {};
 let boxIndex = 0;
-let FINDER = null, ENC = null, MOVES = null, showAllGames = false;
+let FINDER = null, ENC = null, MOVES = null, EVO = null, showAllGames = false;
 let routeGame = '', routeArea = '';
 let EVENTS = [];
 const dataGames = () => GAMES.filter(g => !NO_DATA.has(g.id));
@@ -128,7 +128,7 @@ function filterDefs() {
     { id: 'gender', label: 'Gender', opts: [['diff', 'Has gender difference'], ['m', 'Male slot'], ['f', 'Female slot']] },
     { id: 'tag', label: 'Tags', opts: [['mega', 'Has Mega'], ['gmaxable', 'Can Gigantamax'], ['lock', 'Shiny-locked'], ['nolock', 'Not shiny-locked'], ['review', 'Needs Home check']] },
     { id: 'stage', label: 'Evolution stage', opts: [[1, 'Stage 1'], [2, 'Stage 2'], [3, 'Stage 3']] },
-    { id: 'evo', label: 'Evolves by', opts: uniq(all.map(s => s.evoMethod)).map(e => [e, cap(e)]) },
+    { id: 'evo', label: 'Evolves by', opts: EVO ? [['base', "Doesn't evolve from anything"], ...uniq(Object.values(EVO.evo).flat().flatMap(r => r.tags)).map(t => [t, t])] : uniq(all.map(s => s.evoMethod)).map(e => [e, cap(e)]) },
     { id: 'color', label: 'Color', opts: uniq(all.map(s => s.color)).map(c => [c, cap(c)]) },
     { id: 'shape', label: 'Body shape', opts: uniq(all.map(s => s.shape)).map(c => [c, cap(c)]) },
     { id: 'growth', label: 'Growth rate', opts: uniq(all.map(s => s.growth)).map(c => [c, cap(c)]) },
@@ -162,7 +162,11 @@ function matches(s, dex) {
   if (f.tag === 'nolock' && s.shinyLock) return false;
   if (f.tag === 'review' && !s.review) return false;
   if (f.stage && s.stage !== Number(f.stage)) return false;
-  if (f.evo && s.evoMethod !== f.evo) return false;
+  if (f.evo) {
+    if (!EVO) { if (s.evoMethod !== f.evo) return false; }
+    else if (f.evo === 'base') { if (s.from) return false; }
+    else if (!evoRowsFor(s).some(r => r.tags.includes(f.evo))) return false;
+  }
   if (f.color && s.color !== f.color) return false;
   if (f.shape && s.shape !== f.shape) return false;
   if (f.growth && s.growth !== f.growth) return false;
@@ -297,12 +301,13 @@ function openDetail(s) {
       <tr><td>Base friendship</td><td>${s.friendship}</td></tr>
       <tr><td>Egg cycles</td><td>${s.eggCycles}</td></tr>
       <tr><td>Growth rate</td><td>${cap(s.growth)}</td></tr>
-      <tr><td>Evolution</td><td>Stage ${s.stage}${s.evoMethod ? ' · by ' + cap(s.evoMethod) : ''}</td></tr>
+      <tr><td>Evolution stage</td><td>Stage ${s.stage}</td></tr>
       <tr><td>Color / shape</td><td>${cap(s.color)} · ${cap(s.shape)}</td></tr>
       <tr><td>Tags</td><td>${[...s.cat.map(cap), s.hasMega && 'Has Mega', gmaxable.has(s.sid) && 'Can Gigantamax', s.shinyLock && 'Shiny-locked'].filter(Boolean).join(', ') || '—'}</td></tr>
-      <tr><td>Family</td><td>${famMembers.map(x => esc(x.species)).join(', ')}</td></tr>
       ${regional ? `<tr><td>Regional dex</td><td>${esc(regional)}</td></tr>` : ''}
     </table>
+    <h3>Evolution</h3>
+    <div id="evoBox">${evoHtml(s)}</div>
     <h3>Where to find</h3>
     <label class="small"><input type="checkbox" data-act="showall"${showAllGames ? ' checked' : ''}> Include games I don't own</label>
     <div id="findBox">${s.slot === false ? '<p class="muted small">This form has no Home slot.</p>' : findHtml(s)}</div>
@@ -312,6 +317,83 @@ function openDetail(s) {
   d.classList.remove('hidden');
 }
 const gameName = (id) => (GAME[id] || {}).name || id;
+
+// ---------- evolution ----------
+const baseSlotOf = (sid) => SLOTS.find(x => x.sid === sid && !x.gmax && x.formType === 'base') || SLOTS.find(x => x.sid === sid && !x.gmax);
+// Rows that lead to this slot's form (a form-specific row wins; otherwise the generic rows).
+function evoRowsFor(slot) {
+  const rows = (EVO && EVO.evo[slot.sid]) || [];
+  const own = rows.filter(r => r.toForm === slot.fid);
+  if (own.length) return own;
+  return rows.filter(r => !r.toForm || r.toForm === (baseSlotOf(slot.sid) || {}).fid);
+}
+function gameVg(game) {
+  if (!EVO) return null;
+  const first = (GAME_VERSIONS[game] || [])[0];
+  return first ? EVO.verVg[first[0]] ?? null : null;
+}
+// How to evolve into `slot` in `game`: {ok, txt}.
+function evoInGame(slot, game) {
+  if (game === 'go') return { ok: true, txt: 'Evolve with Candy' };
+  const G = gameVg(game);
+  if (G == null) return { ok: true, txt: evoRowsFor(slot).filter(r => r.cur).map(r => r.txt)[0] || 'Evolve' };
+  if (EVO.vgWithData.includes(G) && !(EVO.present[slot.sid] || []).includes(G)) return { ok: false };
+  const regions = EVO.vgRegions[G] || [];
+  const ok = evoRowsFor(slot).filter(r => r.vg <= G && (!r.locRegion || regions.includes(r.locRegion)) && (!r.region || regions.includes(r.region)));
+  if (!ok.length) return { ok: false };
+  const top = Math.max(...ok.map(r => r.vg));
+  return { ok: true, txt: [...new Set(ok.filter(r => r.vg === top).map(r => r.txt))].join(' or ') };
+}
+// "Catch X, then evolve: …" for an encounter of an earlier family member.
+function viaText(viaSid, target, game) {
+  const steps = [];
+  let cur = target;
+  while (cur && cur.sid !== viaSid) {
+    steps.unshift(cur);
+    cur = cur.from ? baseSlotOf(cur.from) : null;
+  }
+  const name = (baseSlotOf(viaSid) || {}).species || '#' + viaSid;
+  const how = steps.map((st, i) => evoInGame(i === steps.length - 1 ? target : st, game));
+  if (how.some(h => !h.ok)) return `Catch ${esc(name)}, but it can't evolve into ${esc(target.species)} in this game — move it to a game where it can`;
+  return `Catch ${esc(name)}, then evolve: ${how.map(h => esc(h.txt)).join(' → ')}`;
+}
+function methodLines(rows, slot) {
+  const vgl = (o) => esc(EVO.vgLabel[o] || '');
+  const byTarget = new Map();
+  for (const r of rows) { const k = r.toLabel || ''; if (!byTarget.has(k)) byTarget.set(k, []); byTarget.get(k).push(r); }
+  let h = '';
+  for (const [label, list] of byTarget) {
+    const mine = slot && list.some(r => r.toForm === slot.fid);
+    h += `<div class="evo-method${mine ? ' mine' : ''}">${label ? `<b>${esc(label)}:</b> ` : ''}`;
+    if (list.length === 1) h += `${esc(list[0].txt)} <span class="muted">· since ${vgl(list[0].vg)}</span>`;
+    else h += list.map(r => `<div><span class="muted">${r.cur ? 'Now' : 'From ' + vgl(r.vg)}:</span> ${esc(r.txt)}${r.cur ? ` <span class="muted">(since ${vgl(r.vg)})</span>` : ''}</div>`).join('');
+    h += '</div>';
+  }
+  return h;
+}
+function evoHtml(s) {
+  if (!EVO) return '<p class="muted small">Loading evolution data…</p>';
+  const fam = [...new Map(SLOTS.filter(x => x.fam === s.fam && !x.gmax).map(x => [x.sid, baseSlotOf(x.sid)])).values()];
+  const inFam = new Set(fam.map(x => x.sid));
+  const kids = (sid) => fam.filter(x => x.from === sid);
+  const roots = fam.filter(x => !x.from || !inFam.has(x.from));
+  if (fam.length === 1 && !s.from) return '<p class="muted small">Does not evolve.</p>';
+  let top = '';
+  const own = (EVO.evo[s.sid] || []).filter(r => r.toForm === s.fid);
+  if (own.length && formLabel(s)) top = `<div class="note">This form: ${own.map(r => esc(r.txt)).join(' <b>or</b> ')}</div>`;
+  const mon = (x, arrow) => `<span class="evo-mon${x.sid === s.sid ? ' here' : ''}" data-open="${esc(x.key)}">${arrow ? '<span class="evo-arrow">↳</span>' : ''}<img src="${spriteUrl(x, false)}" alt="">${esc(x.species)}</span>`;
+  const steps = (x) => {
+    const children = kids(x.sid);
+    if (!children.length) return '';
+    return `<ul>${children.map(c => {
+      const rows = EVO.evo[c.sid] || [];
+      const lines = methodLines(rows, c.sid === s.sid ? s : null);
+      return `<li><div class="evo-card">${mon(c, true)}${rows.length > 9 ? `<details><summary>${rows.length} ways (one per form)</summary>${lines}</details>` : lines}</div>${steps(c)}</li>`;
+    }).join('')}</ul>`;
+  };
+  const node = (x) => `<li>${mon(x, false)}${steps(x)}</li>`;
+  return top + `<ul class="evo-tree">${roots.map(node).join('')}</ul>` + (roots.length > 1 ? '<p class="muted small">This family is joined by breeding, not evolution.</p>' : '');
+}
 function findHtml(s) {
   if (!FINDER) return '<p class="muted small">Loading location data…</p>';
   const r = FINDER.find(s, { showAll: showAllGames });
@@ -330,7 +412,7 @@ function findHtml(s) {
       if (seen.has(k)) continue; seen.add(k);
       h += `<div class="small" style="padding:3px 0;border-top:1px solid var(--line)">
         <span class="tier t${e.tier[0]}">${e.tier[1]}</span> ${esc(e.place)} · ${esc(methodLabel(e.method))} · Lv ${e.lo}${e.hi !== e.lo ? '–' + e.hi : ''}${e.rar ? ' · ' + e.rar + '%' : ''}
-        ${e.conds.length ? `<span class="muted"> · ${esc(e.conds.join(', '))}</span>` : ''}${e.via ? `<br><span class="muted">Catch ${esc(nameOf(e.via))}, then evolve</span>` : ''}</div>`;
+        ${e.conds.length ? `<span class="muted"> · ${esc(e.conds.join(', '))}</span>` : ''}${e.via ? `<br><span class="muted">${viaText(e.via, s, g)}</span>` : ''}</div>`;
     }
     h += '</div>';
   }
@@ -357,6 +439,8 @@ function movesHtml(s) {
     <details class="small"><summary>Tutor moves (any game)</summary>${esc(by(4)) || '—'}</details>`;
 }
 function onDetail(e) {
+  const mon = e.target.closest('[data-open]');
+  if (mon) { const t = BYKEY.get(mon.dataset.open); if (t) openDetail(t); return; }
   if (e.target.dataset.act === 'showall') { showAllGames = e.target.checked; openDetail(findAny($('detail').dataset.key)); return; }
   const act = e.target.dataset.act;
   if (act === 'close') { $('detail').classList.add('hidden'); return; }
@@ -657,8 +741,8 @@ async function main() {
   fetch('data/events.json').then(r => r.json()).then(d => { EVENTS = d.events || []; EVENTS.updated = d.updated; refresh(); }).catch(() => {});
   renderAccount(null);
   refresh();
-  Promise.all([fetch('data/encounters.json').then(r => r.json()), fetch('data/moves.json').then(r => r.json())]).then(([enc, moves]) => {
-    ENC = enc; MOVES = moves;
+  Promise.all([fetch('data/encounters.json').then(r => r.json()), fetch('data/moves.json').then(r => r.json()), fetch('data/evolutions.json').then(r => r.json())]).then(([enc, moves, evo]) => {
+    ENC = enc; MOVES = moves; EVO = evo;
     FINDER = createFinder({ slots: SLOTS, games: GAMES, settings: S, enc: ENC });
     refresh();
     if (!$('detail').classList.contains('hidden')) openDetail(findAny($('detail').dataset.key));
