@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-16",
   "note": "US distributions only. Add or edit entries by hand; the scheduled checker appends new ones.",
   "events": [
     {
@@ -120,6 +120,45 @@
       "end": null,
       "shiny": true,
       "source": "https://www.pokemon.com/us/pokemon-video-games/pokemon-distributions"
+    },
+    {
+      "id": "za-shiny-xerneas-celebrate30th",
+      "title": "Shiny Xerneas (code CELEBRATE30TH)",
+      "game": "legendsza",
+      "keys": [
+        "xerneas-neutral"
+      ],
+      "how": "Mystery Gift → Get with Code/Password → CELEBRATE30TH",
+      "start": "2026-11-12",
+      "end": "2027-01-07",
+      "shiny": true,
+      "source": "https://www.nintendolife.com/news/2026/11/nab-a-free-shiny-legendary-with-pokemon-legends-z-as-new-limited-time-mystery-gift-code"
+    },
+    {
+      "id": "za-shiny-yveltal-2026",
+      "title": "Shiny Yveltal (code TBA)",
+      "game": "legendsza",
+      "keys": [
+        "yveltal"
+      ],
+      "how": "Mystery Gift → Get with Code/Password (code to be announced)",
+      "start": "2026-12-10",
+      "end": "2027-02-04",
+      "shiny": true,
+      "source": "https://www.videogameschronicle.com/news/pokemon-legends-z-a-players-can-claim-2-free-shiny-legendaries/"
+    },
+    {
+      "id": "sv-kommoo-7star-2026",
+      "title": "7★ Tera Raid: Kommo-o (Mightiest Mark)",
+      "game": "violet",
+      "keys": [
+        "kommo-o"
+      ],
+      "how": "Poké Portal News → 7★ Tera Raid Battle event",
+      "start": "2026-11-13",
+      "end": "2026-11-19",
+      "shiny": false,
+      "source": "https://pocketmonsters.net/news/9722"
     }
   ]
 }
