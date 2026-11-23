@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-23",
   "note": "US distributions only. Add or edit entries by hand; the scheduled checker appends new ones.",
   "events": [
     {
@@ -159,6 +159,19 @@
       "end": "2026-11-19",
       "shiny": false,
       "source": "https://pocketmonsters.net/news/9722"
+    },
+    {
+      "id": "sv-dragapult-7star-2026",
+      "title": "7★ Tera Raid: Dragapult (Mightiest Mark)",
+      "game": "violet",
+      "keys": [
+        "dragapult"
+      ],
+      "how": "Poké Portal News → 7★ Tera Raid Battle event",
+      "start": "2026-11-20",
+      "end": "2026-11-26",
+      "shiny": false,
+      "source": "https://www.serebii.net/news/2026/20-November-2026.shtml"
     }
   ]
 }
